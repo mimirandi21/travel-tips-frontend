@@ -43,15 +43,15 @@ class Place {
 		});
 	}
 
-	static getPlaces = () => {
+	static getPlaces() {
 		return fetch("http://localhost:3000/places")
 			.then((res) => res.json())
 			.then((placeInfo) => {
-				placeInfo.forEach(function (place) {
-					place.sections.forEach(function (sec) {
+				placeInfo.forEach((place) => {
+					place.sections.forEach((sec) => {
 						new Section(sec);
 					});
-					place.tips.forEach(function (tip) {
+					place.tips.forEach((tip) => {
 						new Tip(tip);
 					});
 					new Place(place);
@@ -60,7 +60,7 @@ class Place {
 			.catch((error) => {
 				console.error(error);
 			});
-	};
+	}
 }
 
 Place.getPlaces().then(Place.renderAllPlaces);

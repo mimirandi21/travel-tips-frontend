@@ -13,8 +13,21 @@
 		<script defer type="text/javascript" src="index.js"></script>
 	</head>
 	<body>
-		<div id="search-bar">**Search Places**</div>
+		<div id="search-bar">
+			<input
+				id="searchbar"
+				type="text"
+				name="search"
+				placeholder="Search places"
+			/>
+		</div>
 		<h1 id="main-title">Travel Tips</h1>
 		<div id="places-div"></div>
+		<h3>Make a new Place:</h3>
+		<form id="new-place-form">
+			<input id="new-place-name" type="text" placeholder="Enter place name" />
+			<br />
+			<input type="submit" value="Create" />
+		</form>
 	</body>
 </html>
