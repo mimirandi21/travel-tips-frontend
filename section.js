@@ -7,14 +7,15 @@ class Section {
 		this.place_id = place_id;
 
 		this.main = document.createElement("div");
-		this.main.id = `section-${this.id}`;
+
+		this.main.id = `main-${this.name}`;
 		this.nameDiv = document.createElement("div");
 		this.nameDiv.id = `section-${this.id}`;
 		this.tipArea = document.createElement("div");
 		this.tipArea.id = `section-${this.id}`;
 		this.main.append(this.nameDiv, this.tipArea);
 
-		this.nameDiv.addEventListener("click", this.moreTips);
+		// this.nameDiv.addEventListener("click", this.moreTips);
 
 		Section.all.push(this);
 	}
@@ -26,10 +27,11 @@ class Section {
 	};
 
 	renderTips = () => {
+		this.tipArea.append(this.allTips().map((tip) => tip.main));
 		this.tipArea.innerHTML = this.allTips().map((tip) => tip.renderTip());
 	};
 
 	renderSection = () => {
-		return (this.nameDiv.innerHTML = `<h3>${this.name}</h3>`);
+		return (this.nameDiv.innerHTML = `<h3 id="${this.name}">${this.name}</h3>`);
 	};
 }

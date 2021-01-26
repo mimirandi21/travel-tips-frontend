@@ -11,20 +11,24 @@ class Place {
 		this.nameDiv = document.createElement("div");
 		this.nameDiv.id = `placeName-${this.id}`;
 		this.sectionDiv = document.createElement("div");
-		this.sectionDiv.id = `placeSections-${this.id}`;
+		this.sectionDiv.id = `placeSections`;
 		this.main.append(this.nameDiv, this.sectionDiv);
 
 		Place.all.push(this);
 	}
 
 	renderPlace = () => {
-		this.nameDiv.innerHTML = `<h1>${this.name}</h1>`;
+		this.nameDiv.innerHTML = `<h1 id="${this.name.split(",")[0]}">${
+			this.name
+		}</h1>`;
 	};
 
-	renderSection = () => {
-		this.sectionDiv.innerHTML = this.allSections().map(
-			(section) => section.renderSection() + section.renderTips()
-		);
+	renderAllSections = () => {
+		this.allSections().forEach((section) => {
+			section.renderSection();
+			section.renderTips();
+			this.sectionDiv.appendChild(section.main);
+		});
 	};
 
 	allSections = () => {
@@ -34,8 +38,29 @@ class Place {
 	static renderAllPlaces() {
 		Place.all.forEach((place) => {
 			place.renderPlace();
-			place.renderSection();
+			place.renderAllSections();
 			Place.placeContainer.appendChild(place.main);
 		});
 	}
+
+	static getPlaces = () => {
+		return fetch("http://localhost:3000/places")
+			.then((res) => res.json())
+			.then((placeInfo) => {
+				placeInfo.forEach(function (place) {
+					place.sections.forEach(function (sec) {
+						new Section(sec);
+					});
+					place.tips.forEach(function (tip) {
+						new Tip(tip);
+					});
+					new Place(place);
+				});
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
 }
+
+Place.getPlaces().then(Place.renderAllPlaces);

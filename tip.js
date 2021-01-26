@@ -33,16 +33,20 @@ class Tip {
 		this.likeArea.append(this.likeButton, this.dislikeButton);
 		this.main.append(this.colorDiv, this.infoDiv, this.likeArea);
 
-		this.nameDiv.addEventListener("click", this.moreTips);
-		this.dislikeButton.addEventListener("click", this.addDislike);
-		this.likeButton.addEventListener("click", this.addLike);
+		// this.nameDiv.addEventListener("click", this.moreTips);
+		// this.dislikeButton.addEventListener("click", this.addDislike);
+		// this.likeButton.addEventListener("click", this.addLike);
 
 		Tip.all.push(this);
 	}
 
 	renderTip = () => {
-		this.infoDiv.innerHTML = `<p>${this.info}</p>`;
-		this.changeColorDiv();
+		if (this.info != undefined) {
+			this.infoDiv.innerHTML = `<p class="inner-tip">${this.info}</p>`;
+			this.changeColorDiv();
+		} else {
+			this.infoDiv.innerHTML = "";
+		}
 	};
 
 	changeColorDiv = () => {
