@@ -6,13 +6,16 @@ class Place {
 		this.id = id;
 		this.name = name;
 
-		this.main = document.createElement("div");
+		this.main = document.createElement("li");
 		this.main.id = `placeMain-${this.id}`;
 		this.nameDiv = document.createElement("div");
-		this.nameDiv.id = `placeName-${this.id}`;
+		this.nameDiv.id = `placeName`;
 		this.sectionDiv = document.createElement("div");
 		this.sectionDiv.id = `placeSections`;
-		this.main.append(this.nameDiv, this.sectionDiv);
+		let space = document.createElement("p");
+		space.id = `placeSpace`;
+		space.innerText = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		this.main.append(this.nameDiv, this.sectionDiv, space);
 
 		Place.all.push(this);
 	}
@@ -42,25 +45,4 @@ class Place {
 			Place.placeContainer.appendChild(place.main);
 		});
 	}
-
-	static getPlaces() {
-		return fetch("http://localhost:3000/places")
-			.then((res) => res.json())
-			.then((placeInfo) => {
-				placeInfo.forEach((place) => {
-					place.sections.forEach((sec) => {
-						new Section(sec);
-					});
-					place.tips.forEach((tip) => {
-						new Tip(tip);
-					});
-					new Place(place);
-				});
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-	}
 }
-
-Place.getPlaces().then(Place.renderAllPlaces);

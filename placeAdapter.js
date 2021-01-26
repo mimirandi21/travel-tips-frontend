@@ -1,9 +1,9 @@
 class PlaceAdapter {
-	static getPlaces = () => {
-		fetch("http://localhost:3000/places")
+	static fetchPlaces() {
+		return fetch("http://localhost:3000/places")
 			.then((res) => res.json())
 			.then((placeInfo) => {
-				placeInfo.forEach(function (place) {
+				return placeInfo.forEach(function (place) {
 					place.sections.forEach(function (sec) {
 						new Section(sec);
 					});
@@ -16,5 +16,20 @@ class PlaceAdapter {
 			.catch((error) => {
 				console.error(error);
 			});
-	};
+	}
+
+	// static createPlace({ name }) {
+	// 	return fetch("http://localhost:3000/places", {
+	// 		method: "POST",
+	// 		headers: {
+	// 			"Content-Type": "application/json",
+	// 			Accept: "application/json",
+	// 		},
+	// 		body: JSON.stringify({
+	// 			place: {
+	// 				name,
+	// 			},
+	// 		}),
+	// 	});
+	// }
 }

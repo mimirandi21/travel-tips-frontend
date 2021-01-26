@@ -13,21 +13,36 @@
 		<script defer type="text/javascript" src="index.js"></script>
 	</head>
 	<body>
-		<div id="search-bar">
-			<input
-				id="searchbar"
-				type="text"
-				name="search"
-				placeholder="Search places"
-			/>
-		</div>
-		<h1 id="main-title">Travel Tips</h1>
-		<div id="places-div"></div>
-		<h3>Make a new Place:</h3>
-		<form id="new-place-form">
-			<input id="new-place-name" type="text" placeholder="Enter place name" />
+		<div id="wrapper">
 			<br />
-			<input type="submit" value="Create" />
-		</form>
+			<h1 id="main-title">Travel Tips</h1>
+			<br />
+
+			<div id="search-bar">
+				<input
+					onkeyup="searchPlace()"
+					id="searchbar"
+					type="text"
+					name="search"
+					placeholder="Search destinations"
+				/>
+				<br />
+			</div>
+
+			<div>
+				<ul id="places-div"></ul>
+				<br />
+				<h3 id="formLabel">Make a new Destination:</h3>
+				<form id="new-place-form">
+					<input
+						id="new-place-name"
+						type="text"
+						placeholder="Enter destination"
+					/>
+					<br />
+					<input type="submit" value="Create" />
+				</form>
+			</div>
+		</div>
 	</body>
 </html>

@@ -39,7 +39,7 @@
 }
 
 #main-Packing {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
 	margin: 3px;
@@ -55,7 +55,7 @@
 }
 
 #searchbar {
-	margin-left: 80%;
+	margin-left: 70%;
 	padding: 15px;
 	border-radius: 10px;
 }
@@ -69,5 +69,83 @@ input[type="text"] {
 /* When the input field gets focus, 
 	  change its width to 100% */
 input[type="text"]:focus {
-	width: 70%;
+	width: 25%;
+}
+
+li {
+	display: list-item;
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#wrapper {
+	flex-direction: column;
+	margin: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+	/* The image used */
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url("images/paperairplane.jpg");
+	/* Full height */
+	min-height: 100%;
+	min-width: 100%;
+	filter: brightness(100%);
+	/* Center and scale the image nicely */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: white;
+}
+
+#main-Hotels {
+	background-color: white;
+	color: rgb(2, 2, 46);
+}
+
+#main-Attractions {
+	background-color: white;
+	color: rgb(2, 2, 46);
+}
+
+#main-Weather {
+	background-color: white;
+	color: rgb(2, 2, 46);
+}
+
+#main-General {
+	background-color: white;
+	color: rgb(2, 2, 46);
+}
+
+#main-Packing {
+	background-color: white;
+	color: rgb(2, 2, 46);
+}
+
+#main-Food {
+	background-color: white;
+	color: rgb(2, 2, 46);
+}
+
+#main-title {
+	text-align: center;
+}
+
+#placeSpace {
+	text-align: center;
+}
+
+#placeName {
+	text-align: center;
+}
+
+form,
+#formLabel {
+	text-align: center;
 }
