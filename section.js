@@ -8,11 +8,11 @@ class Section {
 
 		this.main = document.createElement("card");
 
-		this.main.id = `main`;
+		this.main.id = `main-${this.name}`;
 		this.nameDiv = document.createElement("div");
-		this.nameDiv.id = `section-${this.id}`;
+		this.nameDiv.id = `section`;
 		this.tipArea = document.createElement("div");
-		this.tipArea.id = `section-${this.id}`;
+		this.tipArea.id = `section`;
 		this.main.append(this.nameDiv, this.tipArea);
 
 		this.main.addEventListener("click", this.onCardClick);
@@ -51,7 +51,7 @@ class Section {
 		// hide the original card with opacity
 		card.style.opacity = "0";
 		// add card to the same container
-		card.parentNode.appendChild(cardClone);
+		places.appendChild(cardClone);
 		// create a close button to handle the undo
 		const closeButton = document.createElement("button");
 		// position the close button top corner
@@ -101,8 +101,8 @@ class Section {
 		});
 		// expand the clone card
 		await this.toggleExpansion(cardClone, {
-			top: 20,
-			left: 40,
+			top: "100px",
+			left: "10%",
 			width: "80vw",
 			height: "80vh",
 		});
@@ -140,5 +140,10 @@ class Section {
 
 	renderSection = () => {
 		return (this.nameDiv.innerHTML = `<h3 id="${this.name}">${this.name}</h3>`);
+	};
+
+	renderExpandedCard = () => {
+		this.renderSection();
+		this.renderTips();
 	};
 }

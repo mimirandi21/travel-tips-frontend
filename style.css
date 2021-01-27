@@ -4,69 +4,103 @@
 	align-items: flex-start;
 	flex-direction: row;
 	flex-wrap: wrap;
+	height: 600px;
 }
 
 #main-Attractions {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
+	min-height: 45%;
 	margin: 3px;
-	text-align: center;
-	background-color: white;
-	color: rgb(2, 2, 46);
+	text-align: left;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/view.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
 }
 
 #main-Weather {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
+	min-height: 45%;
 	margin: 3px;
-	text-align: center;
-	background-color: white;
-	color: rgb(2, 2, 46);
+	text-align: left;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/rainy-day.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: black;
 }
 
 #main-Hotels {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
+	min-height: 45%;
 	margin: 3px;
-	text-align: center;
-	background-color: white;
-	color: rgb(2, 2, 46);
+	text-align: left;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/hotel.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
 }
 
 #main-General {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
+	min-height: 45%;
 	margin: 3px;
-	text-align: center;
-	background-color: white;
-	color: rgb(2, 2, 46);
+	text-align: left;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/notes.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: black;
 }
 
 #main-Packing {
 	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
+	min-height: 45%;
 	margin: 3px;
-	text-align: center;
-	background-color: white;
-	color: rgb(2, 2, 46);
+	text-align: left;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/suitcase.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left;
+	backdrop-filter: blur(8px);
+	color: black;
 }
 
 #main-Food {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
+	min-height: 45%;
 	margin: 3px;
-	text-align: center;
-	background-color: white;
-	color: rgb(2, 2, 46);
+	text-align: left;
+	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+		url("images/new-fork.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	color: black;
 }
 
-#main {
+/* #main {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 	min-width: 30%;
@@ -74,12 +108,13 @@
 	text-align: center;
 	background-color: white;
 	color: rgb(2, 2, 46);
-}
+} */
 
 #searchbar {
 	margin-left: 70%;
 	padding: 15px;
 	border-radius: 10px;
+	margin-top: 150px;
 }
 
 input[type="text"] {
@@ -105,28 +140,31 @@ body {
 	width: 100%;
 }
 
-#wrapper {
+#header {
 	flex-direction: column;
 	margin: 0;
 	display: flex;
 	width: 100%;
-	align-items: stretch;
+	/* align-items: stretch; */
 	/* The image used */
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url("images/beach.jpg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+		url("images/lovepalms.jpg");
 	/* Full height */
-	min-height: 100%;
-	min-width: 100%;
+
+	/* min-width: 100%; */
 	filter: brightness(100%);
 	/* Center and scale the image nicely */
 	background-size: cover;
-	background-position: fixed;
+	background-position: bottom;
 	background-repeat: no-repeat;
 	color: white;
+	height: 450px;
 }
 
 #main-title {
 	text-align: center;
+	font-family: "Gochi Hand", cursive;
+	font-size: 56px;
 }
 
 #placeSpace {
@@ -140,4 +178,12 @@ body {
 form,
 #formLabel {
 	text-align: center;
+}
+
+#wrapper {
+	background-color: rgb(253, 247, 242);
+}
+
+#section {
+	margin: 10px;
 }

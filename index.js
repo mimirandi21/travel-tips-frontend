@@ -34,9 +34,9 @@ newDestSubmit.addEventListener("submit", (e) => {
 	}).then(location.reload());
 });
 
-let placesDiv = document.querySelector("#places");
-let cards = document.querySelectorAll("card#main");
-cards.forEach((card) => card.addEventListener("click", onCardClick));
+// let placesDiv = document.querySelector("#places");
+// let cards = document.querySelectorAll("card#main");
+// cards.forEach((card) => card.addEventListener("click", onCardClick));
 
 // let toggleExpansion = (element, to, duration = 350) => {
 // 	return new Promise((res) => {
@@ -55,19 +55,19 @@ cards.forEach((card) => card.addEventListener("click", onCardClick));
 // 		setTimeout(res, duration);
 // 	});
 // };
-const onCardClick = async (e) => {
-	const card = e.currentTarget;
-	const cardClone = card.cloneNode(true);
-	const { top, left, width, height } = card.getBoundingClientRect();
-	cardClone.style = `
-		width: 70%,
-		height: 70%,
-		position: fixed.
-		z-index: 10000
-	`;
-	placesDiv.appendChild(cardClone);
-	card.style.opacity = "0";
-};
+// const onCardClick = async (e) => {
+// 	const card = e.currentTarget;
+// 	const cardClone = card.cloneNode(true);
+// 	const { top, left, width, height } = card.getBoundingClientRect();
+// 	cardClone.style = `
+// 		width: 70%,
+// 		height: 70%,
+// 		position: fixed.
+// 		z-index: 10000
+// 	`;
+// 	placesDiv.appendChild(cardClone);
+// 	card.style.opacity = "0";
+// };
 // 	card.parentNode.appendChild(cardClone);
 
 // 	requestAnimationFrame(() => {

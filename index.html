@@ -4,6 +4,11 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Travel Tips</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<script defer type="text/javascript" src="placeAdapter.js"></script>
 		<script defer type="text/javascript" src="tipAdapter.js"></script>
@@ -14,21 +19,22 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<br />
-			<h1 id="main-title">Travel Tips</h1>
-			<br />
-
-			<div id="search-bar">
-				<input
-					onkeyup="searchPlace()"
-					id="searchbar"
-					type="text"
-					name="search"
-					placeholder="Search destinations"
-				/>
+			<div id="header">
 				<br />
-			</div>
+				<h1 id="main-title">Travel Tips</h1>
+				<br />
 
+				<div id="search-bar">
+					<input
+						onkeyup="searchPlace()"
+						id="searchbar"
+						type="text"
+						name="search"
+						placeholder="Search destinations"
+					/>
+					<br />
+				</div>
+			</div>
 			<div id="places">
 				<ul id="places-div"></ul>
 				<br />
