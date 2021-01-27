@@ -4,6 +4,7 @@ class PlaceAdapter {
 			.then((res) => res.json())
 			.then((placeInfo) => {
 				return placeInfo.forEach(function (place) {
+					console.log(place);
 					place.sections.forEach(function (sec) {
 						new Section(sec);
 					});

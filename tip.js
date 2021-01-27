@@ -33,12 +33,14 @@ class Tip {
 		this.likeArea.append(this.likeButton, this.dislikeButton);
 		this.main.append(this.colorDiv, this.infoDiv, this.likeArea);
 
-		// this.nameDiv.addEventListener("click", this.moreTips);
+		this.nameDiv.addEventListener("click", this.moreTips);
 		// this.dislikeButton.addEventListener("click", this.addDislike);
 		// this.likeButton.addEventListener("click", this.addLike);
 
 		Tip.all.push(this);
 	}
+
+	moreTips = () => {};
 
 	renderTip = () => {
 		if (this.info != undefined) {
