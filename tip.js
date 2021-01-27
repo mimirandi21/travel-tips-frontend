@@ -22,7 +22,7 @@ class Tip {
 		this.main.id = `sectionMain-${this.id}`;
 		this.colorDiv = document.createElement("div");
 		this.colorDiv.id = `change-${this.id}`;
-		this.infoDiv = document.createElement("div");
+		this.infoDiv = document.createElement("li");
 		this.infoDiv.id = `sectionInfo-${this.id}`;
 		this.likeArea = document.createElement("div");
 		this.likeButton = document.createElement("button");
@@ -33,22 +33,22 @@ class Tip {
 		this.likeArea.append(this.likeButton, this.dislikeButton);
 		this.main.append(this.colorDiv, this.infoDiv, this.likeArea);
 
-		this.nameDiv.addEventListener("click", this.moreTips);
+		// this.nameDiv.addEventListener("click", this.moreTips);
 		// this.dislikeButton.addEventListener("click", this.addDislike);
 		// this.likeButton.addEventListener("click", this.addLike);
 
 		Tip.all.push(this);
 	}
 
-	moreTips = () => {};
+	// moreTips = () => {};
 
 	renderTip = () => {
-		if (this.info != undefined) {
-			this.infoDiv.innerHTML = `<p class="inner-tip">${this.info}</p>`;
-			this.changeColorDiv();
-		} else {
-			this.infoDiv.innerHTML = "";
-		}
+		// if (this.info != undefined) {
+		return (this.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li>`);
+		// this.changeColorDiv();
+		// } else {
+		// 	this.infoDiv.innerHTML = "";
+		// }
 	};
 
 	changeColorDiv = () => {

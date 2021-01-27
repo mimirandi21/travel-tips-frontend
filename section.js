@@ -6,13 +6,13 @@ class Section {
 		this.name = name;
 		this.place_id = place_id;
 
-		this.main = document.createElement("card");
+		this.main = document.createElement("div");
 
 		this.main.id = `main-${this.name}`;
 		this.nameDiv = document.createElement("div");
 		this.nameDiv.id = `section`;
 		this.tipArea = document.createElement("div");
-		this.tipArea.id = `section`;
+		this.tipArea.id = `tip-section`;
 		this.main.append(this.nameDiv, this.tipArea);
 
 		this.main.addEventListener("click", this.onCardClick);
@@ -63,7 +63,7 @@ class Section {
 			width: 35px;
 			height: 35px;
 			border-radius: 50%;
-			background-color: #e25656;
+			background-color: #11698E;
 		`;
 		// attach click event to the close button
 		closeButton.addEventListener("click", async () => {
@@ -106,6 +106,7 @@ class Section {
 			width: "80vw",
 			height: "80vh",
 		});
+		debugger;
 		let content = this.renderSection();
 		// set the display block so the content will follow the normal flow in case the original card is not display block
 		cardClone.style.display = "block";
@@ -134,12 +135,13 @@ class Section {
 	};
 
 	renderTips = () => {
-		this.tipArea.append(this.allTips().map((tip) => tip.main));
-		this.tipArea.innerHTML = this.allTips().map((tip) => tip.renderTip());
+		this.tipArea.innerHTML = this.allTips()
+			.map((tip) => tip.renderTip())
+			.join("");
 	};
 
 	renderSection = () => {
-		return (this.nameDiv.innerHTML = `<h3 id="${this.name}">${this.name}</h3>`);
+		return (this.nameDiv.innerHTML = `<h3 id="${this.name}"><span>${this.name}</span></h3>`);
 	};
 
 	renderExpandedCard = () => {
