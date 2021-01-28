@@ -5,7 +5,7 @@
 }
 
 #main-Attractions:hover #tip-section {
-	display: inline-block;
+	display: block;
 	background-color: #ffffff;
 	margin: 15px;
 	opacity: 0.7;
@@ -16,18 +16,18 @@
 }
 
 #main-Weather:hover #tip-section {
-	display: inline-block;
+	display: block;
 	background-color: #ffffff;
 	margin: 15px;
 	opacity: 0.7;
 }
 
 #main-Weather:hover #section {
-	padding-top: 1%;
+	padding-top: 2px;
 }
 
 #main-Hotels:hover #tip-section {
-	display: inline-block;
+	display: block;
 	background-color: #ffffff;
 	margin: 15px;
 	opacity: 0.7;
@@ -38,20 +38,20 @@
 }
 
 #main-General:hover #tip-section {
-	display: inline-block;
+	display: block;
 	background-color: #ffffff;
 	margin: 15px;
 	opacity: 0.7;
 }
 
 #main-General:hover #section {
-	padding-top: 1%;
+	padding-top: 2%;
 }
 
 #main-Packing:hover #tip-section {
-	display: inline-block;
+	display: block;
 	background-color: #ffffff;
-	margin: 15px;
+	margin: 10px;
 	opacity: 0.7;
 }
 
@@ -60,9 +60,9 @@
 }
 
 #main-Food:hover #tip-section {
-	display: inline-block;
+	display: block;
 	background-color: #ffffff;
-	margin: 15px;
+	margin: 10px;
 	opacity: 0.7;
 }
 
@@ -93,6 +93,7 @@
 	background-position: center;
 	backdrop-filter: blur(8px);
 	color: black;
+	list-style-position: inside;
 }
 
 #main-Weather {
@@ -108,6 +109,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	color: black;
+	list-style-position: inside;
 }
 
 #main-Hotels {
@@ -124,6 +126,7 @@
 	background-position: center;
 	backdrop-filter: blur(8px);
 	color: black;
+	list-style-position: inside;
 }
 
 #main-General {
@@ -139,6 +142,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	color: black;
+	list-style-position: inside;
 }
 
 #main-Packing {
@@ -155,6 +159,7 @@
 	background-position: left;
 	backdrop-filter: blur(8px);
 	color: black;
+	list-style-position: inside;
 }
 
 #main-Food {
@@ -171,6 +176,7 @@
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	color: black;
+	list-style-position: inside;
 }
 
 /* #main {
@@ -267,5 +273,36 @@ form,
 }
 
 #tip-section {
+	display: none;
+}
+
+#like-button,
+#dislike-button {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color: #599bb3;
+	border-radius: 8px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 13px 32px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #3d768a;
+}
+#like-button:hover,
+#dislike-button:hover {
+	background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color: #408c99;
+}
+#like-button:active,
+#dislike-button:active {
+	position: relative;
+	top: 1px;
+}
+
+#likeSection {
 	display: none;
 }

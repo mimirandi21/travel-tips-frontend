@@ -50,31 +50,14 @@ class Place {
 	static searchPlace() {
 		let searchPlaceBar = document.getElementById("searchbar");
 		let input = searchPlaceBar.value.toLowerCase();
-		// let places = Place.all.filter((element) =>
-		// 	element.name.toLowerCase().includes(input)
-		// );
-		// places.forEach((place) => {
-		// 	place.renderPlace();
-		// 	place.renderAllSections();
-		// });
 
-		// for (element in Place.all) {
-		// 	if (!places.includes(element)) {
-		// 		element.style.display = "none";
-		// 	}
-		// }
-
-		// let searchPlaceBar = document.getElementById("searchbar");
-		// let input = searchPlaceBar.value.toLowerCase();
-		// let x = document.getElementsByTagName("li");
 		let x = document.querySelectorAll("#placeMain");
 
 		for (let i = 0; i < x.length; i++) {
 			if (!x[i].innerHTML.toLowerCase().includes(input)) {
 				x[i].style.display = "none";
 			} else {
-				x[i].style.display = "inline-block";
-				// x[i].childNodes.display = "inline-block";
+				x[i].style.display = "block";
 			}
 		}
 	}

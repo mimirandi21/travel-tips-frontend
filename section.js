@@ -38,6 +38,7 @@ class Section {
 	};
 
 	onCardClick = async (e) => {
+		// const likeArea = document.querySelectorAll("#likeSection")
 		const places = document.querySelector("#places");
 		const card = this.main;
 
@@ -108,13 +109,13 @@ class Section {
 			height: "80vh",
 		});
 		let content = this.renderTips();
-
 		// set the display block so the content will follow the normal flow in case the original card is not display block
 
 		cardClone.style.display = "block";
-		cardClone.style.paddingTop = "100px";
 		cardClone.style.listStyle = "square";
 		cardClone.style.textAlign = "left";
+		cardClone.style.padding = "100px 10px";
+
 		// append the close button after the expansion is done
 		cardClone.appendChild(closeButton);
 		// cardClone.append(this.appendTips());
@@ -140,7 +141,7 @@ class Section {
 	};
 
 	renderTips = () => {
-		return (this.tipArea.innerHTML = this.allTips()
+		return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerHTML = this.allTips()
 			.map((tip) => tip.renderTip())
 			.join(""));
 	};
@@ -153,7 +154,7 @@ class Section {
 		if (this.allTips().length >= 3) {
 			let tips = this.allTips().slice(0, 3);
 
-			return (this.tipArea.innerHTML = tips
+			return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerHTML = tips
 				.map((tip) => tip.renderTip())
 				.join(""));
 		} else {
@@ -163,7 +164,7 @@ class Section {
 
 	appendFirstThreeTips = () => {
 		let tips = this.allTips().slice(0, 3);
-		return tips.map((tip) => this.tipArea.append(tip.main));
+		return tips.forEach((tip) => this.tipArea.append(tip.main));
 	};
 
 	renderSection = () => {
@@ -171,6 +172,7 @@ class Section {
 	};
 
 	renderExpandedCard = () => {
+		debugger;
 		this.appendTips();
 		this.renderTips();
 		this.renderSection();

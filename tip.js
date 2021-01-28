@@ -28,24 +28,25 @@ class Tip {
 		this.infoDiv.id = `sectionInfo-${this.id}`;
 		this.likeArea = document.createElement("div");
 		this.likeButton = document.createElement("button");
-		this.likeButton.id = `like-${this.id}`;
+		this.likeButton.id = `like-button`;
 		this.dislikeButton = document.createElement("button");
-		this.dislikeButton.id = `dislike-${this.id}`;
-		this.likeArea.id = `sectionLike-${this.id}`;
+		this.dislikeButton.id = `dislike-button`;
+		this.likeArea.id = `likeSection`;
 		this.likeArea.append(this.likeButton, this.dislikeButton);
 		this.fuckyou.append(this.colorDiv, this.infoDiv, this.likeArea);
 		this.main.appendChild(this.fuckyou);
 
-		// this.likeButton.addEventListener("click", this.addLike);
+		this.likeButton.addEventListener("click", this.addLike);
 		Tip.all.push(this);
 	}
-	// renderTip = () => {
-	// 	this.changeColorDiv();
-	// 	return (this.main.fuckyou.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
-	// };
-	// tipInfo = () => {
-	// 	return (this.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
-	// };
+	renderTip = () => {
+		this.changeColorDiv();
+		return (this.main.childNodes[0].childNodes[1].innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
+	};
+
+	tipInfo = () => {
+		return (this.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
+	};
 
 	changeColorDiv = () => {
 		if (this.color === "green") {
@@ -57,12 +58,8 @@ class Tip {
 		}
 	};
 
-	renderTip = () => {
-		return (this.main.innerHTML = `
-			<div id="fuckyou"><div id="change-${this.id}"><li id="tip-list"><span>${this.info}</span><div id="likeSection-${this.id}"><div id="likeme-${this.id}"><button id="like-${this.id}">Like</button><h3 id="megood-${this.id}"></h3></div></div><br><div id="dislikeme-${this.id}"><button id="dislike-${this.id}">Dislike</button><h3 id="mebad-${this.id}"></h3></div></div></li><br></div></div>`);
-	};
-
-	addLike = () => {
-		debugger;
-	};
+	// renderTip = () => {
+	// 	return (this.main.innerHTML = `
+	// 		<div id="fuckyou"><div id="change-${this.id}"><li id="tip-list"><span>${this.info}</span><div id="likeSection"><div id="likeme-${this.id}"><button id="like-button">Like</button><h3 id="megood-${this.id}"></h3></div><br><div id="dislikeme-${this.id}"><button id="dislike-button">Dislike</button><h3 id="mebad-${this.id}"></h3></div></div></div></li><br></div></div>`);
+	// };
 }
