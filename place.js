@@ -7,7 +7,7 @@ class Place {
 		this.name = name;
 
 		this.main = document.createElement("li");
-		this.main.id = `placeMain-${this.id}`;
+		this.main.id = `placeMain`;
 		this.nameDiv = document.createElement("div");
 		this.nameDiv.id = `placeName`;
 		this.sectionDiv = document.createElement("div");
@@ -45,5 +45,37 @@ class Place {
 			place.renderAllSections();
 			Place.placeContainer.appendChild(place.main);
 		});
+	}
+
+	static searchPlace() {
+		let searchPlaceBar = document.getElementById("searchbar");
+		let input = searchPlaceBar.value.toLowerCase();
+		// let places = Place.all.filter((element) =>
+		// 	element.name.toLowerCase().includes(input)
+		// );
+		// places.forEach((place) => {
+		// 	place.renderPlace();
+		// 	place.renderAllSections();
+		// });
+
+		// for (element in Place.all) {
+		// 	if (!places.includes(element)) {
+		// 		element.style.display = "none";
+		// 	}
+		// }
+
+		// let searchPlaceBar = document.getElementById("searchbar");
+		// let input = searchPlaceBar.value.toLowerCase();
+		// let x = document.getElementsByTagName("li");
+		let x = document.querySelectorAll("#placeMain");
+
+		for (let i = 0; i < x.length; i++) {
+			if (!x[i].innerHTML.toLowerCase().includes(input)) {
+				x[i].style.display = "none";
+			} else {
+				x[i].style.display = "inline-block";
+				// x[i].childNodes.display = "inline-block";
+			}
+		}
 	}
 }

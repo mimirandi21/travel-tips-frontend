@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 	PlaceAdapter.fetchPlaces().then(Place.renderAllPlaces);
 });
-let searchPlaceBar = document.getElementById("searchbar");
+// let searchPlaceBar = document.getElementById("searchbar");
 
-function searchPlace() {
-	let input = searchPlaceBar.value.toLowerCase();
-	let x = document.getElementsByTagName("li");
+// function searchPlace() {
+// 	let input = searchPlaceBar.value.toLowerCase();
+// 	let x = document.getElementsByTagName("li");
 
-	for (i = 0; i < x.length; i++) {
-		if (!x[i].innerHTML.toLowerCase().includes(input)) {
-			x[i].style.display = "none";
-		} else {
-			x[i].style.display = "list-item";
-		}
-	}
-}
+// 	for (i = 0; i < x.length; i++) {
+// 		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+// 			x[i].style.display = "none";
+// 		} else {
+// 			x[i].style.display = "list-item";
+// 		}
+// 	}
+// }
 let newDest = document.getElementById("new-place-name");
 let newDestSubmit = document.getElementById("new-place-form");
 
