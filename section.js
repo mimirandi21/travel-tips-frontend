@@ -108,20 +108,16 @@ class Section {
 			height: "80vh",
 		});
 		let content = this.renderTips();
-		// set the display block so the content will follow the normal flow in case the original card is not display block
-		// let fuckyou = document.createElement("div");
-		// fuckyou.id = "fuckyou";
 
-		// cardClone.append(fuckyou);
-		// fuckyou.style.color = "#ffffff";
-		// fuckyou.style.opacity = "0.3";
-		// fuckyou.style.minHeight = "100%";
+		// set the display block so the content will follow the normal flow in case the original card is not display block
+
 		cardClone.style.display = "block";
 		cardClone.style.paddingTop = "100px";
 		cardClone.style.listStyle = "square";
 		cardClone.style.textAlign = "left";
 		// append the close button after the expansion is done
 		cardClone.appendChild(closeButton);
+		// cardClone.append(this.appendTips());
 		cardClone.insertAdjacentHTML("afterbegin", content);
 	};
 
@@ -147,24 +143,36 @@ class Section {
 		return (this.tipArea.innerHTML = this.allTips()
 			.map((tip) => tip.renderTip())
 			.join(""));
-		// this.allTips().map((tip) => this.tipArea.appendChild(tip.main));
 	};
+
+	appendTips() {
+		return this.allTips().map((tip) => this.tipArea.append(tip.main));
+	}
 
 	renderFirstThreeTips = () => {
 		if (this.allTips().length >= 3) {
 			let tips = this.allTips().slice(0, 3);
-			this.tipArea.innerHTML = tips.map((tip) => tip.renderTip()).join("");
+
+			return (this.tipArea.innerHTML = tips
+				.map((tip) => tip.renderTip())
+				.join(""));
 		} else {
-			this.renderTips();
+			return this.renderTips();
 		}
 	};
+
+	appendFirstThreeTips = () => {
+		let tips = this.allTips().slice(0, 3);
+		return tips.map((tip) => this.tipArea.append(tip.main));
+	};
+
 	renderSection = () => {
 		return (this.nameDiv.innerHTML = `<h3 id="${this.name}"><span>${this.name}</span></h3>`);
 	};
 
 	renderExpandedCard = () => {
-		console.log(this);
-		this.renderSection();
+		this.appendTips();
 		this.renderTips();
+		this.renderSection();
 	};
 }

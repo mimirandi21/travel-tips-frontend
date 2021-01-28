@@ -20,9 +20,11 @@ class Tip {
 
 		this.main = document.createElement("div");
 		this.main.id = `sectionMain-${this.id}`;
+		this.fuckyou = document.createElement("div");
+		this.fuckyou.id = "fuckyou";
 		this.colorDiv = document.createElement("div");
 		this.colorDiv.id = `change-${this.id}`;
-		this.infoDiv = document.createElement("li");
+		this.infoDiv = document.createElement("div");
 		this.infoDiv.id = `sectionInfo-${this.id}`;
 		this.likeArea = document.createElement("div");
 		this.likeButton = document.createElement("button");
@@ -31,26 +33,19 @@ class Tip {
 		this.dislikeButton.id = `dislike-${this.id}`;
 		this.likeArea.id = `sectionLike-${this.id}`;
 		this.likeArea.append(this.likeButton, this.dislikeButton);
-		this.main.append(this.colorDiv, this.infoDiv, this.likeArea);
+		this.fuckyou.append(this.colorDiv, this.infoDiv, this.likeArea);
+		this.main.appendChild(this.fuckyou);
 
-		// this.nameDiv.addEventListener("click", this.moreTips);
-		// this.dislikeButton.addEventListener("click", this.addDislike);
 		// this.likeButton.addEventListener("click", this.addLike);
-
 		Tip.all.push(this);
 	}
-
-	// moreTips = () => {};
-
-	renderTip = () => {
-		// if (this.info != undefined) {
-		this.changeColorDiv();
-		return (this.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li>`);
-
-		// } else {
-		// 	this.infoDiv.innerHTML = "";
-		// }
-	};
+	// renderTip = () => {
+	// 	this.changeColorDiv();
+	// 	return (this.main.fuckyou.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
+	// };
+	// tipInfo = () => {
+	// 	return (this.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
+	// };
 
 	changeColorDiv = () => {
 		if (this.color === "green") {
@@ -60,5 +55,14 @@ class Tip {
 		} else {
 			this.colorDiv.style.backgroundColor = "red";
 		}
+	};
+
+	renderTip = () => {
+		return (this.main.innerHTML = `
+			<div id="fuckyou"><div id="change-${this.id}"><li id="tip-list"><span>${this.info}</span><div id="likeSection-${this.id}"><div id="likeme-${this.id}"><button id="like-${this.id}">Like</button><h3 id="megood-${this.id}"></h3></div></div><br><div id="dislikeme-${this.id}"><button id="dislike-${this.id}">Dislike</button><h3 id="mebad-${this.id}"></h3></div></div></li><br></div></div>`);
+	};
+
+	addLike = () => {
+		debugger;
 	};
 }
