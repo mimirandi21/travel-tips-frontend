@@ -104,3 +104,20 @@ newDestSubmit.addEventListener("submit", (e) => {
 // });
 // cardClone.appendChild(closeButton);
 // };
+
+renderFirstThreeTips = (section) => {
+	debugger;
+	if (section.allTips.size >= 3) {
+		section.tipArea.innerHTML = section
+			.allTips()
+			.slice(0, 3)
+			.map((tip) => tip.renderTip())
+			.join("");
+		section
+			.allTips()
+			.slice(0, 3)
+			.map((tip) => section.tipArea.appendChild(tip.main));
+	} else {
+		section.renderTips();
+	}
+};

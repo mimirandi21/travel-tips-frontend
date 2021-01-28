@@ -44,8 +44,9 @@ class Tip {
 
 	renderTip = () => {
 		// if (this.info != undefined) {
+		this.changeColorDiv();
 		return (this.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li>`);
-		// this.changeColorDiv();
+
 		// } else {
 		// 	this.infoDiv.innerHTML = "";
 		// }

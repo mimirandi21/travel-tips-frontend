@@ -23,13 +23,13 @@ class Place {
 	renderPlace = () => {
 		this.nameDiv.innerHTML = `<h1 id="${this.name.split(",")[0]}">${
 			this.name
-		}</h1>`;
+		}</h1><br>`;
 	};
 
 	renderAllSections = () => {
 		this.allSections().forEach((section) => {
 			section.renderSection();
-			section.renderTips();
+			section.renderFirstThreeTips();
 			this.sectionDiv.appendChild(section.main);
 		});
 	};

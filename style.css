@@ -1,3 +1,9 @@
+#tip-list span {
+	background-color: #ffffff;
+	opacity: 0.7;
+	margin: 15px;
+}
+
 #main-Attractions:hover #tip-section {
 	display: inline-block;
 	background-color: #ffffff;

@@ -51,6 +51,7 @@ class Section {
 		// hide the original card with opacity
 		card.style.opacity = "0";
 		// add card to the same container
+
 		places.appendChild(cardClone);
 		// create a close button to handle the undo
 		const closeButton = document.createElement("button");
@@ -106,11 +107,19 @@ class Section {
 			width: "80vw",
 			height: "80vh",
 		});
-		debugger;
-		let content = this.renderSection();
+		let content = this.renderTips();
 		// set the display block so the content will follow the normal flow in case the original card is not display block
+		// let fuckyou = document.createElement("div");
+		// fuckyou.id = "fuckyou";
+
+		// cardClone.append(fuckyou);
+		// fuckyou.style.color = "#ffffff";
+		// fuckyou.style.opacity = "0.3";
+		// fuckyou.style.minHeight = "100%";
 		cardClone.style.display = "block";
-		cardClone.style.padding = "0";
+		cardClone.style.paddingTop = "100px";
+		cardClone.style.listStyle = "square";
+		cardClone.style.textAlign = "left";
 		// append the close button after the expansion is done
 		cardClone.appendChild(closeButton);
 		cardClone.insertAdjacentHTML("afterbegin", content);
@@ -135,16 +144,26 @@ class Section {
 	};
 
 	renderTips = () => {
-		this.tipArea.innerHTML = this.allTips()
+		return (this.tipArea.innerHTML = this.allTips()
 			.map((tip) => tip.renderTip())
-			.join("");
+			.join(""));
+		// this.allTips().map((tip) => this.tipArea.appendChild(tip.main));
 	};
 
+	renderFirstThreeTips = () => {
+		if (this.allTips().length >= 3) {
+			let tips = this.allTips().slice(0, 3);
+			this.tipArea.innerHTML = tips.map((tip) => tip.renderTip()).join("");
+		} else {
+			this.renderTips();
+		}
+	};
 	renderSection = () => {
 		return (this.nameDiv.innerHTML = `<h3 id="${this.name}"><span>${this.name}</span></h3>`);
 	};
 
 	renderExpandedCard = () => {
+		console.log(this);
 		this.renderSection();
 		this.renderTips();
 	};
