@@ -20,3 +20,12 @@ newDestSubmit.addEventListener("submit", (e) => {
 		body: JSON.stringify(data),
 	}).then(location.reload());
 });
+
+let cardCloneCreate = (cardClone, section) => {
+	let newarea = document.createElement("div");
+	cardClone.appendChild(newarea);
+	section.allTips().forEach((tip) => tip.rendernewtip());
+	section.allTips().forEach((tip) => newarea.append(tip.main));
+	section.allTips().forEach((tip) => tip.renderTip());
+	section.allTips().forEach((tip) => tip.changeColorDiv());
+};

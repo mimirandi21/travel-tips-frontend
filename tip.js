@@ -23,7 +23,7 @@ class Tip {
 		this.fuckyou = document.createElement("div");
 		this.fuckyou.id = "fuckyou";
 		this.colorDiv = document.createElement("div");
-		this.colorDiv.id = `change-${this.id}`;
+		this.colorDiv.id = `change`;
 		this.infoDiv = document.createElement("li");
 		this.infoDiv.id = `tip-list`;
 		this.likeArea = document.createElement("div");
@@ -40,12 +40,30 @@ class Tip {
 		Tip.all.push(this);
 	}
 	renderTip = () => {
-		// this.changeColorDiv();
 		return (this.infoDiv.innerText = `${this.info}`);
+	};
+	rendernewtip = () => {
+		this.main.removeChild(this.fuckyou);
+		this.main.id = "main";
+		this.fuckyou = document.createElement("div");
+		this.fuckyou.id = "fuckyou";
+		this.colorDiv = document.createElement("div");
+		this.colorDiv.id = `change`;
+		this.infoDiv = document.createElement("li");
+		this.infoDiv.id = `tipsahoy`;
+		this.likeArea = document.createElement("div");
+		this.likeButton = document.createElement("button");
+		this.likeButton.id = `like-button`;
+		this.dislikeButton = document.createElement("button");
+		this.dislikeButton.id = `dislike-button`;
+		this.likeArea.id = `likeSection`;
+		this.likeArea.append(this.likeButton, this.dislikeButton);
+		this.fuckyou.append(this.colorDiv, this.infoDiv, this.likeArea);
+		this.main.appendChild(this.fuckyou);
 	};
 
 	tipInfo = () => {
-		return (this.main.childNodes[0].childNodes[1].innerHTML = `<li id="tip-list"><span>${this.info}</span></li>`);
+		return (this.infoDiv = `<li id="tip-list"><span>${this.info}</span></li>`);
 	};
 
 	changeColorDiv = () => {

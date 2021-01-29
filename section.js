@@ -40,11 +40,21 @@ class Section {
 
 	onCardClick = async (e) => {
 		// const likeArea = document.querySelectorAll("#likeSection")
+
 		const places = document.querySelector("#places");
 		const card = this.main;
+		const likes = document.querySelectorAll("#likeSection");
 
 		// clone the card
-		const cardClone = card.cloneNode(true);
+		const cardClone = document.createElement("div");
+		cardClone.id = "clone";
+		// let newarea = document.createElement("div");
+		// cardClone.appendChild(newarea);
+		cardCloneCreate(cardClone, this);
+		let newarea = document.createElement("div");
+		newarea.id = "newarea";
+		cardClone.appendChild(newarea);
+
 		// get the location of the card in the view
 		const { top, left, width, height } = card.getBoundingClientRect();
 		// position the clone on top of the original
@@ -52,7 +62,9 @@ class Section {
 		// hide the original card with opacity
 		card.style.opacity = "0";
 		// add card to the same container
+
 		places.appendChild(cardClone);
+
 		// create a close button to handle the undo
 		const closeButton = document.createElement("button");
 		// position the close button top corner
@@ -66,6 +78,7 @@ class Section {
 			border-radius: 50%;
 			background-color: #11698E;
 		`;
+
 		// attach click event to the close button
 		closeButton.addEventListener("click", async () => {
 			// remove the button on close
@@ -77,23 +90,22 @@ class Section {
 			[...cardClone.children].forEach((child) =>
 				child.style.removeProperty("display")
 			);
+
 			this.fadeContent(cardClone, "0");
 			// shrink the card back to the original position and size
-			await this.toggleExpansion(
-				cardClone,
-				{
-					top: `${top}px`,
-					left: `${left}px`,
-					width: `${width}px`,
-					height: `${height}px`,
-				},
-				300
-			);
+			await this.toggleExpansion(cardClone, {
+				top: `${top}px`,
+				left: `${left}px`,
+				width: `${width}px`,
+				height: `${height}px`,
+			});
+
 			// show the original card again
 			card.style.removeProperty("opacity");
 			// remove the clone card
 			cardClone.remove();
 			// fade the content away
+
 			this.fadeContent(cardClone, "0").then(() => {
 				[...cardClone.children].forEach(
 					(child) => (child.style.display = "none")
@@ -101,19 +113,22 @@ class Section {
 			});
 		});
 		// expand the clone card
-		await this.toggleExpansion(cardClone, {
-			top: "100px",
-			left: "10%",
-			width: "80vw",
-			height: "80vh",
-		});
-
+		await this.toggleExpansion(
+			cardClone,
+			{
+				top: "100px",
+				left: "10%",
+				width: "80vw",
+				height: "80vh",
+			},
+			300
+		);
 		// set the display block so the content will follow the normal flow in case the original card is not display block
 
 		cardClone.style.display = "inline-block";
 		cardClone.style.listStyle = "square";
 		cardClone.style.textAlign = "left";
-		cardClone.style.padding = "100px 10px";
+
 		// append the close button after the expansion is done
 
 		cardClone.appendChild(closeButton);
@@ -133,17 +148,39 @@ class Section {
 
 	allTips = () => {
 		return Tip.all
-			.filter((tip) => tip.section_id === this.id)
-			.filter((tip) => tip.place_id === this.place_id);
+			.filter((tip) => tip.section_id == this.id)
+			.filter((tip) => tip.place_id == this.place_id);
+	};
+	bigjfk = () => {
+		this.renderBigTip();
+		this.bigTips();
 	};
 
+	jfk = () => {
+		this.renderTips();
+		this.fuckingTips();
+	};
 	renderTips = () => {
 		if (this.allTips().length > 0) {
-			this.allTips().forEach((tip) => this.tipArea.append(tip.main));
-			return this.allTips()
+			let tips = this.allTips().slice(0, 3);
+			tips.forEach((tip) => this.tipArea.append(tip.infoDiv));
+		}
+	};
+
+	renderBigTip = () => {
+		if (this.allTips().length > 0) {
+			this.allTips().forEach((tip) => newarea.append(tip.main));
+		}
+	};
+	fuckingTips = () => {
+		if (this.allTips().length > 0) {
+			this.allTips()
 				.map((tip) => tip.renderTip())
 				.join(" ");
 		}
+	};
+	bigTips = () => {
+		this.allTips().map((tip) => tip.renderTip());
 	};
 
 	renderFirstThreeTips = () => {
@@ -158,31 +195,7 @@ class Section {
 		}
 	};
 
-	// appendFirstThreeTips = () => {
-	// 	// let tips = this.allTips().slice(0, 3);
-	// 	tips.forEach((tip) => this.tipArea.append(tip.main));
-	// 	if (this.allTips().length > 3) {
-	// 		let tips = this.allTips().slice(0, 3);
-	// 		debugger;
-	// 		return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].InnerText = tips.map(
-	// 			(tip) => tip.renderTip()
-	// 		));
-	// 	} else {
-	// 		return this.renderTips();
-	// 	}
-	// };
-	// doit = () => {
-	// 	this.tipArea.append(this.renderFirstThreeTips());
-	// };
-
 	renderSection = () => {
 		return (this.nameDiv.innerHTML = `<h3 id="${this.name}"><span>${this.name}</span></h3>`);
 	};
-
-	// 	renderExpandedCard = () => {
-	// 		debugger;
-	// 		this.appendTips();
-	// 		this.renderTips();
-	// 		this.renderSection();
-	// 	};
 }

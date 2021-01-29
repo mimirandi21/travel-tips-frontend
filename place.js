@@ -7,7 +7,7 @@ class Place {
 		this.name = name;
 
 		this.main = document.createElement("li");
-		this.main.id = `placeMain`;
+		this.main.id = `${this.id}`;
 		this.nameDiv = document.createElement("div");
 		this.nameDiv.id = `placeName`;
 		this.sectionDiv = document.createElement("div");
@@ -30,7 +30,7 @@ class Place {
 		this.allSections().forEach((section) => {
 			section.renderSection();
 			// section.appendFirstThreeTips();
-			section.renderFirstThreeTips();
+			section.jfk();
 			// section.doit();
 			return this.sectionDiv.appendChild(section.main);
 		});
