@@ -24,8 +24,8 @@ class Tip {
 		this.fuckyou.id = "fuckyou";
 		this.colorDiv = document.createElement("div");
 		this.colorDiv.id = `change-${this.id}`;
-		this.infoDiv = document.createElement("div");
-		this.infoDiv.id = `sectionInfo-${this.id}`;
+		this.infoDiv = document.createElement("li");
+		this.infoDiv.id = `tip-list`;
 		this.likeArea = document.createElement("div");
 		this.likeButton = document.createElement("button");
 		this.likeButton.id = `like-button`;
@@ -40,12 +40,12 @@ class Tip {
 		Tip.all.push(this);
 	}
 	renderTip = () => {
-		this.changeColorDiv();
-		return (this.main.childNodes[0].childNodes[1].innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
+		// this.changeColorDiv();
+		return (this.infoDiv.innerText = `${this.info}`);
 	};
 
 	tipInfo = () => {
-		return (this.infoDiv.innerHTML = `<li id="tip-list"><span>${this.info}</span></li><br>`);
+		return (this.main.childNodes[0].childNodes[1].innerHTML = `<li id="tip-list"><span>${this.info}</span></li>`);
 	};
 
 	changeColorDiv = () => {

@@ -1,14 +1,21 @@
+ul {
+	list-style: square;
+	text-align: left;
+	padding-inline-start: 15px;
+}
 #tip-list span {
 	background-color: #ffffff;
-	opacity: 0.7;
+	opacity: 0.8;
 	margin: 15px;
+	color: black;
 }
 
 #main-Attractions:hover #tip-section {
 	display: block;
 	background-color: #ffffff;
 	margin: 15px;
-	opacity: 0.7;
+	opacity: 0.8;
+	color: black;
 }
 
 #main-Attractions:hover #section {
@@ -19,7 +26,8 @@
 	display: block;
 	background-color: #ffffff;
 	margin: 15px;
-	opacity: 0.7;
+	opacity: 0.8;
+	color: black;
 }
 
 #main-Weather:hover #section {
@@ -30,7 +38,8 @@
 	display: block;
 	background-color: #ffffff;
 	margin: 15px;
-	opacity: 0.7;
+	opacity: 0.8;
+	color: black;
 }
 
 #main-Hotels:hover #section {
@@ -41,7 +50,8 @@
 	display: block;
 	background-color: #ffffff;
 	margin: 15px;
-	opacity: 0.7;
+	opacity: 0.8;
+	color: black;
 }
 
 #main-General:hover #section {
@@ -52,7 +62,8 @@
 	display: block;
 	background-color: #ffffff;
 	margin: 10px;
-	opacity: 0.7;
+	opacity: 0.8;
+	color: black;
 }
 
 #main-Packing:hover #section {
@@ -63,7 +74,8 @@
 	display: block;
 	background-color: #ffffff;
 	margin: 10px;
-	opacity: 0.7;
+	opacity: 0.8;
+	color: black;
 }
 
 #main-Food:hover #section {

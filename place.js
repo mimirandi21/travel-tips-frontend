@@ -29,8 +29,9 @@ class Place {
 	renderAllSections = () => {
 		this.allSections().forEach((section) => {
 			section.renderSection();
-			section.appendFirstThreeTips();
+			// section.appendFirstThreeTips();
 			section.renderFirstThreeTips();
+			// section.doit();
 			return this.sectionDiv.appendChild(section.main);
 		});
 	};

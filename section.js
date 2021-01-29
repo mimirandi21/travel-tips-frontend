@@ -7,14 +7,15 @@ class Section {
 		this.place_id = place_id;
 
 		this.main = document.createElement("div");
-
 		this.main.id = `main-${this.name}`;
+		this.wrapper = document.createElement("div");
+		this.wrapper.id = `wrapper-${this.name}`;
 		this.nameDiv = document.createElement("div");
 		this.nameDiv.id = `section`;
 		this.tipArea = document.createElement("div");
 		this.tipArea.id = `tip-section`;
-		this.main.append(this.nameDiv, this.tipArea);
-
+		this.wrapper.append(this.nameDiv, this.tipArea);
+		this.main.append(this.wrapper);
 		this.main.addEventListener("click", this.onCardClick);
 
 		Section.all.push(this);
@@ -48,11 +49,9 @@ class Section {
 		const { top, left, width, height } = card.getBoundingClientRect();
 		// position the clone on top of the original
 		cardClone.style.position = "fixed";
-
 		// hide the original card with opacity
 		card.style.opacity = "0";
 		// add card to the same container
-
 		places.appendChild(cardClone);
 		// create a close button to handle the undo
 		const closeButton = document.createElement("button");
@@ -94,12 +93,12 @@ class Section {
 			card.style.removeProperty("opacity");
 			// remove the clone card
 			cardClone.remove();
-		});
-		// fade the content away
-		this.fadeContent(cardClone, "0").then(() => {
-			[...cardClone.children].forEach(
-				(child) => (child.style.display = "none")
-			);
+			// fade the content away
+			this.fadeContent(cardClone, "0").then(() => {
+				[...cardClone.children].forEach(
+					(child) => (child.style.display = "none")
+				);
+			});
 		});
 		// expand the clone card
 		await this.toggleExpansion(cardClone, {
@@ -108,18 +107,16 @@ class Section {
 			width: "80vw",
 			height: "80vh",
 		});
-		let content = this.renderTips();
+
 		// set the display block so the content will follow the normal flow in case the original card is not display block
 
-		cardClone.style.display = "block";
+		cardClone.style.display = "inline-block";
 		cardClone.style.listStyle = "square";
 		cardClone.style.textAlign = "left";
 		cardClone.style.padding = "100px 10px";
-
 		// append the close button after the expansion is done
+
 		cardClone.appendChild(closeButton);
-		// cardClone.append(this.appendTips());
-		cardClone.insertAdjacentHTML("afterbegin", content);
 	};
 
 	fadeContent = (element, opacity, duration = 300) => {
@@ -141,40 +138,53 @@ class Section {
 	};
 
 	renderTips = () => {
-		return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerHTML = this.allTips()
-			.map((tip) => tip.renderTip())
-			.join(""));
+		if (this.allTips().length > 0) {
+			this.allTips().forEach((tip) => this.tipArea.append(tip.main));
+			return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerText = this.allTips()
+				.map((tip) => tip.renderTip())
+				.join(" "));
+		}
 	};
 
-	appendTips() {
-		return this.allTips().map((tip) => this.tipArea.append(tip.main));
-	}
-
 	renderFirstThreeTips = () => {
-		if (this.allTips().length >= 3) {
-			let tips = this.allTips().slice(0, 3);
+		let tips = this.allTips().slice(0, 3);
+		tips.forEach((tip) => this.tipArea.append(tip.main));
 
-			return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerHTML = tips
+		if (this.allTips().length > 3) {
+			let tips = this.allTips().slice(0, 3);
+			return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerText = tips
 				.map((tip) => tip.renderTip())
-				.join(""));
+				.join(" "));
 		} else {
 			return this.renderTips();
 		}
 	};
 
-	appendFirstThreeTips = () => {
-		let tips = this.allTips().slice(0, 3);
-		return tips.forEach((tip) => this.tipArea.append(tip.main));
-	};
+	// appendFirstThreeTips = () => {
+	// 	// let tips = this.allTips().slice(0, 3);
+	// 	tips.forEach((tip) => this.tipArea.append(tip.main));
+	// 	if (this.allTips().length > 3) {
+	// 		let tips = this.allTips().slice(0, 3);
+	// 		debugger;
+	// 		return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].InnerText = tips.map(
+	// 			(tip) => tip.renderTip()
+	// 		));
+	// 	} else {
+	// 		return this.renderTips();
+	// 	}
+	// };
+	// doit = () => {
+	// 	this.tipArea.append(this.renderFirstThreeTips());
+	// };
 
 	renderSection = () => {
 		return (this.nameDiv.innerHTML = `<h3 id="${this.name}"><span>${this.name}</span></h3>`);
 	};
 
-	renderExpandedCard = () => {
-		debugger;
-		this.appendTips();
-		this.renderTips();
-		this.renderSection();
-	};
+	// 	renderExpandedCard = () => {
+	// 		debugger;
+	// 		this.appendTips();
+	// 		this.renderTips();
+	// 		this.renderSection();
+	// 	};
 }
