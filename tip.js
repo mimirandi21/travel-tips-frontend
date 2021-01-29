@@ -54,16 +54,36 @@ class Tip {
 		this.likeArea = document.createElement("div");
 		this.likeButton = document.createElement("button");
 		this.likeButton.id = `like-button`;
+		this.likeButton.innerText = "Like";
+		this.likeSpace = document.createElement("h3");
+		this.likeSpace.id = "likeme";
 		this.dislikeButton = document.createElement("button");
 		this.dislikeButton.id = `dislike-button`;
+		this.dislikeButton.innerText = "Dislike";
+		this.dislikeSpace = document.createElement("h3");
+		this.dislikeSpace.id = "dislikeme";
 		this.likeArea.id = `likeSection`;
-		this.likeArea.append(this.likeButton, this.dislikeButton);
+		this.likeArea.append(
+			this.likeButton,
+			this.likeSpace,
+			this.dislikeButton,
+			this.dislikeSpace
+		);
 		this.fuckyou.append(this.colorDiv, this.infoDiv, this.likeArea);
 		this.main.appendChild(this.fuckyou);
+
+		this.dislikeButton.addEventListener("click", this.addDislike);
+		this.likeButton.addEventListener("click", this.addLike);
 	};
 
 	tipInfo = () => {
 		return (this.infoDiv = `<li id="tip-list"><span>${this.info}</span></li>`);
+	};
+	likeInfo = () => {
+		return (this.likeSpace.innerText = `${this.like_count}`);
+	};
+	dislikeInfo = () => {
+		return (this.dislikeSpace.innerText = `${this.dislike_count}`);
 	};
 
 	changeColorDiv = () => {
@@ -76,8 +96,7 @@ class Tip {
 		}
 	};
 
-	// renderTip = () => {
-	// 	return (this.main.innerHTML = `
-	// 		<div id="fuckyou"><div id="change-${this.id}"><li id="tip-list"><span>${this.info}</span><div id="likeSection"><div id="likeme-${this.id}"><button id="like-button">Like</button><h3 id="megood-${this.id}"></h3></div><br><div id="dislikeme-${this.id}"><button id="dislike-button">Dislike</button><h3 id="mebad-${this.id}"></h3></div></div></div></li><br></div></div>`);
-	// };
+	// addDislike = () => {
+	// 	this.dislikeSpace.innerText =
+	// }
 }

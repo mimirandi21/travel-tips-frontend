@@ -28,4 +28,6 @@ let cardCloneCreate = (cardClone, section) => {
 	section.allTips().forEach((tip) => newarea.append(tip.main));
 	section.allTips().forEach((tip) => tip.renderTip());
 	section.allTips().forEach((tip) => tip.changeColorDiv());
+	section.allTips().forEach((tip) => tip.likeInfo());
+	section.allTips().forEach((tip) => tip.dislikeInfo());
 };
