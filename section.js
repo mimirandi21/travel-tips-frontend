@@ -140,9 +140,9 @@ class Section {
 	renderTips = () => {
 		if (this.allTips().length > 0) {
 			this.allTips().forEach((tip) => this.tipArea.append(tip.main));
-			return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerText = this.allTips()
+			return this.allTips()
 				.map((tip) => tip.renderTip())
-				.join(" "));
+				.join(" ");
 		}
 	};
 
@@ -152,9 +152,7 @@ class Section {
 
 		if (this.allTips().length > 3) {
 			let tips = this.allTips().slice(0, 3);
-			return (this.tipArea.childNodes[0].childNodes[0].childNodes[1].innerText = tips
-				.map((tip) => tip.renderTip())
-				.join(" "));
+			return tips.map((tip) => tip.renderTip()).join(" ");
 		} else {
 			return this.renderTips();
 		}
