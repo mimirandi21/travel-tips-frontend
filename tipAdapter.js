@@ -20,7 +20,6 @@ class TipAdapter {
 	}
 
 	static makeNewTip(section_id, place_id, info, color) {
-		debugger;
 		return fetch("http://localhost:3000/tips", {
 			method: "POST",
 			headers: {

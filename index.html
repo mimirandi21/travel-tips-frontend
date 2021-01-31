@@ -2,6 +2,11 @@
 
 <html lang="en" dir="ltr">
 	<head>
+		<link rel="icon" type="image/png" href="images/favicon.ico" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="images/favicon.ico" />
+		<meta name="theme-color" content="#ffffff" />
 		<meta charset="utf-8" />
 		<title>Travel Tips</title>
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -16,6 +21,11 @@
 		<script defer type="text/javascript" src="section.js"></script>
 		<script defer type="text/javascript" src="tip.js"></script>
 		<script defer type="text/javascript" src="index.js"></script>
+		<script>
+			window.addEventListener("focus", () => {
+				document.location = document.location;
+			});
+		</script>
 	</head>
 	<body>
 		<div id="wrapper">

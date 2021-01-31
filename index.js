@@ -34,6 +34,7 @@ let cardCloneCreate = (cardClone, section) => {
 };
 
 cardCloneUpdate = (cardClone, section) => {
+	window.location.reload();
 	let newarea = document.createElement("div");
 	newarea.id = "thisonehere";
 	cardClone.appendChild(newarea);
@@ -44,6 +45,7 @@ cardCloneUpdate = (cardClone, section) => {
 	section.allTips().forEach((tip) => tip.likeInfo());
 	section.allTips().forEach((tip) => tip.dislikeInfo());
 };
+
 function renderNewTipForm(cardClone, section) {
 	let newTipForm = document.createElement("form");
 	newTipForm.id = "newTipForm";
@@ -64,12 +66,12 @@ function renderNewTipForm(cardClone, section) {
 	cardClone.appendChild(newTipForm);
 }
 
-let navbar = document.getElementById("search-bar");
-let sticky = navbar.offsetTop;
-window.onscroll = function () {
-	if (window.pageYOffset >= sticky) {
-		navbar.classList.add("sticky");
-	} else {
-		navbar.classList.remove("sticky");
-	}
-};
+// let navbar = document.getElementById("search-bar");
+// let sticky = navbar.offsetTop;
+// window.onscroll = function () {
+// 	if (window.pageYOffset >= sticky) {
+// 		navbar.classList.add("sticky");
+// 	} else {
+// 		navbar.classList.remove("sticky");
+// 	}
+// };

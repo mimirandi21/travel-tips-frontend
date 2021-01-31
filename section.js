@@ -66,10 +66,7 @@ class Section {
 		// add card to the same container
 
 		places.appendChild(cardClone);
-		let makeTip = document.getElementById("newTipForm");
-		makeTip.addEventListener("submit", this.newTipToRails);
-		cardCloneUpdate(cardClone, this);
-		// cardCloneCreate(cardClone, this);
+
 		// create a close button to handle the undo
 		const closeButton = document.createElement("button");
 		// position the close button top corner
@@ -133,7 +130,23 @@ class Section {
 		cardClone.style.display = "inline-block";
 		cardClone.style.listStyle = "square";
 		cardClone.style.textAlign = "left";
+		let makeTip = document.getElementById("newTipForm");
+		makeTip.addEventListener("submit", (e) => {
+			console.log(this);
+			e.preventDefault();
+			let colors = e.currentTarget[1].value;
+			let sections = e.currentTarget[3].value;
+			let places = e.currentTarget[2].value;
+			let newinfo = e.currentTarget[0].value;
+			TipAdapter.makeNewTip(sections, places, newinfo, colors);
+			// window.location.reload();
+			// places.appendChild(cardClone);
+			cardCloneUpdate(cardClone, this);
+			// renderNewTipForm(cardClone, this);
 
+			e.currentTarget.reset();
+			return false;
+		});
 		// append the close button after the expansion is done
 
 		cardClone.appendChild(closeButton);
