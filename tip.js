@@ -54,12 +54,12 @@ class Tip {
 		this.likeArea = document.createElement("div");
 		this.likeButton = document.createElement("button");
 		this.likeButton.id = `like-button`;
-		this.likeButton.innerText = "Like";
+		this.likeButton.innerText = "Agree";
 		this.likeSpace = document.createElement("h3");
 		this.likeSpace.id = "likeme";
 		this.dislikeButton = document.createElement("button");
 		this.dislikeButton.id = `dislike-button`;
-		this.dislikeButton.innerText = "Dislike";
+		this.dislikeButton.innerText = "Disagree";
 		this.dislikeSpace = document.createElement("h3");
 		this.dislikeSpace.id = "dislikeme";
 		this.likeArea.id = `likeSection`;
@@ -96,7 +96,12 @@ class Tip {
 		}
 	};
 
-	// addDislike = () => {
-	// 	this.dislikeSpace.innerText =
-	// }
+	// submitNewTip = (e) => {
+	// 	e.preventDefault();
+	// 	let colors = document.getElementById("color-check").value;
+	// 	let sections = document.getElementById("this-section").value;
+	// 	let places = document.getElementById("this-place").value;
+	// 	let newinfo = document.getElementById("new-tip-info").value;
+	// 	// new Tip({sections, places, newInfo, colors})
+	// };
 }

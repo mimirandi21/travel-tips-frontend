@@ -47,10 +47,12 @@ class Section {
 
 		// clone the card
 		const cardClone = document.createElement("div");
-		cardClone.id = "clone";
+		cardClone.id = `clone-${this.name}`;
 		// let newarea = document.createElement("div");
 		// cardClone.appendChild(newarea);
 		cardCloneCreate(cardClone, this);
+		renderNewTipForm(cardClone, this);
+
 		let newarea = document.createElement("div");
 		newarea.id = "newarea";
 		cardClone.appendChild(newarea);
@@ -64,7 +66,10 @@ class Section {
 		// add card to the same container
 
 		places.appendChild(cardClone);
-
+		let makeTip = document.getElementById("newTipForm");
+		makeTip.addEventListener("submit", this.newTipToRails);
+		cardCloneUpdate(cardClone, this);
+		// cardCloneCreate(cardClone, this);
 		// create a close button to handle the undo
 		const closeButton = document.createElement("button");
 		// position the close button top corner
@@ -197,5 +202,18 @@ class Section {
 
 	renderSection = () => {
 		return (this.nameDiv.innerHTML = `<h3 id="${this.name}"><span>${this.name}</span></h3>`);
+	};
+
+	newTipToRails = (e) => {
+		debugger;
+		console.log(this);
+		e.preventDefault();
+		let colors = e.currentTarget[1].value;
+		let sections = e.currentTarget[3].value;
+		let places = e.currentTarget[2].value;
+		let newinfo = e.currentTarget[0].value;
+		TipAdapter.makeNewTip(sections, places, newinfo, colors);
+		e.currentTarget.reset();
+		return false;
 	};
 }

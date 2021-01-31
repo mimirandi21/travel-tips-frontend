@@ -89,6 +89,9 @@ ul {
 	flex-wrap: wrap;
 	height: 600px;
 }
+#places {
+	position: relative;
+}
 
 #main-Attractions {
 	display: block;
@@ -191,15 +194,9 @@ ul {
 	list-style-position: inside;
 }
 
-/* #main {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
-	min-width: 30%;
-	margin: 3px;
-	text-align: center;
-	background-color: white;
-	color: rgb(2, 2, 46);
-} */
+li#main {
+	list-style-type: none;
+}
 
 #searchbar {
 	margin-left: 70%;
@@ -220,15 +217,18 @@ input[type="text"]:focus {
 	width: 25%;
 }
 
-li {
+li#tip-list {
 	display: list-item;
+	list-style: square;
+	list-style-position: inside;
 }
 
 html,
 body {
 	margin: 0;
-	height: 100%;
-	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	position: relative;
 }
 
 #header {
@@ -249,7 +249,7 @@ body {
 	background-position: bottom;
 	background-repeat: no-repeat;
 	color: white;
-	height: 450px;
+	height: 400px;
 }
 
 #main-title {
@@ -298,11 +298,16 @@ form,
 	cursor: pointer;
 	color: #ffffff;
 	font-family: Arial;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: bold;
 	padding: 13px 32px;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #3d768a;
+	margin: 20px;
+}
+
+#dislike-button {
+	margin-left: 70px;
 }
 #like-button:hover,
 #dislike-button:hover {
@@ -315,15 +320,23 @@ form,
 	top: 1px;
 }
 
-#clone {
-	padding-top: 100px;
+#likeme,
+#dislikeme {
+	align-self: flex-end;
+}
+
+#clone-Attractions {
+	padding-top: 70px;
 	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
 	transition: 0.3s;
-	width: 30%;
-	height: 45%;
+	min-width: 30%;
+	min-height: 45%;
 	text-align: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-		url("images/tinyworld.jpg");
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/view.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -331,25 +344,130 @@ form,
 	color: black;
 	list-style-position: inside;
 	z-index: 1;
-	position: relative;
-	/* float: left; */
-	display: flex;
+	position: absolute;
 	overflow-x: hidden;
 	overflow-y: auto;
 	text-align: justify;
 }
-
-#newarea {
-	height: 100%;
-	background-color: white;
-	opacity: 0.7;
-	z-index: 2;
+#clone-Weather {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/rainy-day.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
 	position: absolute;
-	/* float: left; */
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+#clone-Hotels {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/hotel.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+#clone-General {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/notes.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+#clone-Packing {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/suitcase.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+#clone-Food {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/new-fork.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
 }
 
 #change {
@@ -365,4 +483,12 @@ form,
 #tipsahoy {
 	margin-top: 5px;
 	display: inline-block;
+}
+
+#likeSection {
+	display: inline-flex;
+}
+form {
+	position: relative;
+	z-index: 3;
 }

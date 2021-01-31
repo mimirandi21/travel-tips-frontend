@@ -18,4 +18,33 @@ class TipAdapter {
 				});
 			});
 	}
+
+	static makeNewTip(section_id, place_id, info, color) {
+		debugger;
+		return fetch("http://localhost:3000/tips", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+			body: JSON.stringify({
+				tip: {
+					section_id: section_id,
+					place_id: place_id,
+					info: info,
+					color: color,
+					like_count: 0,
+					dislike_count: 0,
+				},
+			}),
+		})
+			.then(function (resp) {
+				return resp.json();
+			})
+			.then(function (jsonMsg) {
+				if (jsonMsg.successful) {
+					new Tip(jsonMsg);
+				}
+			});
+	}
 }

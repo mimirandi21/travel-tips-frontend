@@ -7,7 +7,7 @@ class Place {
 		this.name = name;
 
 		this.main = document.createElement("li");
-		this.main.id = `${this.id}`;
+		this.main.id = `main`;
 		this.nameDiv = document.createElement("div");
 		this.nameDiv.id = `placeName`;
 		this.sectionDiv = document.createElement("div");
@@ -52,7 +52,7 @@ class Place {
 		let searchPlaceBar = document.getElementById("searchbar");
 		let input = searchPlaceBar.value.toLowerCase();
 
-		let x = document.querySelectorAll("#placeMain");
+		let x = document.querySelectorAll("#main");
 
 		for (let i = 0; i < x.length; i++) {
 			if (!x[i].innerHTML.toLowerCase().includes(input)) {
