@@ -45,5 +45,31 @@ class TipAdapter {
 					new Tip(jsonMsg);
 				}
 			});
+		// .then(location.reload());
+	}
+
+	static EditTip(tip_id, like_count, dislike_count) {
+		return fetch(`http://localhost:3000/tips/${tip_id}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+			body: JSON.stringify({
+				tip: {
+					id: tip_id,
+					like_count: like_count,
+					dislike_count: dislike_count,
+				},
+			}),
+		}).then(function (resp) {
+			return resp.json();
+		});
+		// .then(function (jsonMsg) {
+		// 	if (jsonMsg.successful) {
+		// 		new Tip(jsonMsg);
+		// 	}
+		// });
+		// .then(location.reload());
 	}
 }

@@ -8,6 +8,7 @@ class Section {
 
 		this.main = document.createElement("div");
 		this.main.id = `main-${this.name}`;
+		this.main.classList.add("boxylady");
 		this.wrapper = document.createElement("div");
 		this.wrapper.id = `wrapper-${this.name}`;
 		this.nameDiv = document.createElement("div");
@@ -66,6 +67,17 @@ class Section {
 		// add card to the same container
 
 		places.appendChild(cardClone);
+		let makeTip = document.getElementById("newTipForm");
+		makeTip.addEventListener("submit", (e) => {
+			console.log(this);
+			e.preventDefault();
+			let colors = e.currentTarget[1].value;
+			let sections = e.currentTarget[3].value;
+			let places = e.currentTarget[2].value;
+			let newinfo = e.currentTarget[0].value;
+			newTipCreator(sections, places, newinfo, colors);
+			window.location.reload();
+		});
 
 		// create a close button to handle the undo
 		const closeButton = document.createElement("button");
@@ -130,23 +142,7 @@ class Section {
 		cardClone.style.display = "inline-block";
 		cardClone.style.listStyle = "square";
 		cardClone.style.textAlign = "left";
-		let makeTip = document.getElementById("newTipForm");
-		makeTip.addEventListener("submit", (e) => {
-			console.log(this);
-			e.preventDefault();
-			let colors = e.currentTarget[1].value;
-			let sections = e.currentTarget[3].value;
-			let places = e.currentTarget[2].value;
-			let newinfo = e.currentTarget[0].value;
-			TipAdapter.makeNewTip(sections, places, newinfo, colors);
-			// window.location.reload();
-			// places.appendChild(cardClone);
-			cardCloneUpdate(cardClone, this);
-			// renderNewTipForm(cardClone, this);
 
-			e.currentTarget.reset();
-			return false;
-		});
 		// append the close button after the expansion is done
 
 		cardClone.appendChild(closeButton);
@@ -167,7 +163,10 @@ class Section {
 	allTips = () => {
 		return Tip.all
 			.filter((tip) => tip.section_id == this.id)
-			.filter((tip) => tip.place_id == this.place_id);
+			.filter((tip) => tip.place_id == this.place_id)
+			.sort(function (x, y) {
+				return y.like_count - x.like_count;
+			});
 	};
 	bigjfk = () => {
 		this.renderBigTip();

@@ -82,13 +82,14 @@ ul {
 	padding-top: 1%;
 }
 #placeSections {
-	display: flex;
-	justify-content: space-around;
+	display: none;
+	/* justify-content: space-around;
 	align-items: flex-start;
 	flex-direction: row;
 	flex-wrap: wrap;
-	height: 600px;
+	height: 600px; */
 }
+
 #places {
 	position: relative;
 }
@@ -221,6 +222,8 @@ li#tip-list {
 	display: list-item;
 	list-style: square;
 	list-style-position: inside;
+	font-family: "Cuprum", sans-serif;
+	font-size: 15px;
 }
 
 html,
@@ -264,6 +267,8 @@ body {
 
 #placeName {
 	text-align: center;
+	font-family: "Gochi Hand", cursive;
+	font-size: 20px;
 }
 
 form,
@@ -276,12 +281,16 @@ form,
 }
 
 #section {
-	margin: 30px;
-	padding-top: 20%;
+	/* margin: 30px; */
+	/* display: absolute; */
+	padding-top: 100px;
 }
 
 #section h3 span {
-	background-color: ivory;
+	font-size: 25px;
+	font-family: "Kalam", cursive;
+	text-shadow: 3px 3px 8px black;
+	color: white;
 }
 
 #tip-section {
@@ -289,7 +298,8 @@ form,
 }
 
 #like-button,
-#dislike-button {
+#dislike-button,
+#newdie {
 	box-shadow: 0px 10px 14px -7px #276873;
 	background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
 	background-color: #599bb3;
@@ -297,25 +307,27 @@ form,
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-family: Arial;
-	font-size: 15px;
+	font-family: "Kalam", cursive;
+	font-size: 20px;
 	font-weight: bold;
-	padding: 13px 32px;
+	padding: 10px 23px;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #3d768a;
 	margin: 20px;
 }
 
 #dislike-button {
-	margin-left: 70px;
+	margin-left: 50px;
 }
 #like-button:hover,
-#dislike-button:hover {
+#dislike-button:hover,
+#newdie:hover {
 	background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 	background-color: #408c99;
 }
 #like-button:active,
-#dislike-button:active {
+#dislike-button:active,
+#newdie:active {
 	position: relative;
 	top: 1px;
 }
@@ -482,13 +494,28 @@ form,
 }
 #tipsahoy {
 	margin-top: 5px;
-	display: inline-block;
+	display: inline-flex;
+	width: 100%;
+	font-family: "Cuprum", sans-serif;
 }
 
 #likeSection {
 	display: inline-flex;
 }
+#clone #main {
+	display: flex;
+	flex-direction: column;
+}
 form {
 	position: relative;
 	z-index: 3;
+	font-family: "Kalam", cursive;
+}
+#likes,
+#dislikes {
+	display: flex;
+	flex-direction: row;
+}
+#formLabel {
+	font-family: "Kalam", cursive;
 }

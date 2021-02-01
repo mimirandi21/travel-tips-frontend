@@ -17,6 +17,8 @@ class Place {
 		space.innerText = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
 		this.main.append(this.nameDiv, this.sectionDiv, space);
 
+		this.nameDiv.addEventListener("click", this.renderPlaceSpace);
+
 		Place.all.push(this);
 	}
 
@@ -29,9 +31,7 @@ class Place {
 	renderAllSections = () => {
 		this.allSections().forEach((section) => {
 			section.renderSection();
-			// section.appendFirstThreeTips();
 			section.jfk();
-			// section.doit();
 			return this.sectionDiv.appendChild(section.main);
 		});
 	};
@@ -40,12 +40,35 @@ class Place {
 		return Section.all.filter((section) => section.place_id === this.id);
 	};
 
+	renderPlaceSpace = (e) => {
+		let thisplace = e.currentTarget.parentNode.childNodes[1];
+		if (thisplace.style.display == "none") {
+			thisplace.setAttribute(
+				"style",
+				"display:flex;justify-content:space-around;align-items:flex-start;flex-direction:row;flex-wrap:wrap;height:600px"
+			);
+		} else {
+			thisplace.style.display = "none";
+		}
+	};
+
 	static renderAllPlaces() {
-		Place.all.forEach((place) => {
-			place.renderPlace();
-			place.renderAllSections();
-			Place.placeContainer.appendChild(place.main);
-		});
+		Place.all
+			.sort()
+			.reverse()
+			.forEach((place) => {
+				place.renderPlace();
+				place.renderAllSections();
+				Place.placeContainer.appendChild(place.main);
+				$("#placeSections")
+					.first()
+					.css("display", "flex")
+					.css("justify-content", "space-around")
+					.css("align-items", "flex-start")
+					.css("flex-direction", "row")
+					.css("flex-wrap", "wrap")
+					.css("height", "600px");
+			});
 	}
 
 	static searchPlace() {

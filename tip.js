@@ -52,38 +52,39 @@ class Tip {
 		this.infoDiv = document.createElement("li");
 		this.infoDiv.id = `tipsahoy`;
 		this.likeArea = document.createElement("div");
+		this.likeSpace = document.createElement("div");
+		this.likeSpace.id = "likes";
 		this.likeButton = document.createElement("button");
 		this.likeButton.id = `like-button`;
 		this.likeButton.innerText = "Agree";
-		this.likeSpace = document.createElement("h3");
-		this.likeSpace.id = "likeme";
+		this.likeCount = document.createElement("h3");
+		this.likeCount.id = `${this.id}`;
+		this.dislikeSpace = document.createElement("div");
+		this.dislikeSpace.id = "dislikes";
 		this.dislikeButton = document.createElement("button");
 		this.dislikeButton.id = `dislike-button`;
 		this.dislikeButton.innerText = "Disagree";
-		this.dislikeSpace = document.createElement("h3");
-		this.dislikeSpace.id = "dislikeme";
+		this.dislikeCount = document.createElement("h3");
+		this.dislikeCount.id = `${this.id}`;
 		this.likeArea.id = `likeSection`;
-		this.likeArea.append(
-			this.likeButton,
-			this.likeSpace,
-			this.dislikeButton,
-			this.dislikeSpace
-		);
+		this.likeSpace.append(this.likeButton, this.likeCount);
+		this.dislikeSpace.append(this.dislikeButton, this.dislikeCount);
+		this.likeArea.append(this.likeSpace, this.dislikeSpace);
 		this.fuckyou.append(this.colorDiv, this.infoDiv, this.likeArea);
 		this.main.appendChild(this.fuckyou);
 
-		this.dislikeButton.addEventListener("click", this.addDislike);
-		this.likeButton.addEventListener("click", this.addLike);
+		this.dislikeSpace.addEventListener("click", this.addDislike);
+		this.likeSpace.addEventListener("click", this.addLike);
 	};
 
 	tipInfo = () => {
 		return (this.infoDiv = `<li id="tip-list"><span>${this.info}</span></li>`);
 	};
 	likeInfo = () => {
-		return (this.likeSpace.innerText = `${this.like_count}`);
+		return (this.likeCount.innerText = `${this.like_count}`);
 	};
 	dislikeInfo = () => {
-		return (this.dislikeSpace.innerText = `${this.dislike_count}`);
+		return (this.dislikeCount.innerText = `${this.dislike_count}`);
 	};
 
 	changeColorDiv = () => {
@@ -96,12 +97,18 @@ class Tip {
 		}
 	};
 
-	// submitNewTip = (e) => {
-	// 	e.preventDefault();
-	// 	let colors = document.getElementById("color-check").value;
-	// 	let sections = document.getElementById("this-section").value;
-	// 	let places = document.getElementById("this-place").value;
-	// 	let newinfo = document.getElementById("new-tip-info").value;
-	// 	// new Tip({sections, places, newInfo, colors})
-	// };
+	addLike(e) {
+		let tipid = e.currentTarget.lastChild.id;
+		let thistip = Tip.all.find((tip) => tip.id === parseInt(tipid));
+		thistip.like_count += 1;
+		TipAdapter.EditTip(thistip.id, thistip.like_count, thistip.dislike_count);
+		e.currentTarget.lastChild.innerText = thistip.like_count;
+	}
+	addDisike(e) {
+		let tipid = e.currentTarget.lastChild.id;
+		let thistip = Tip.all.find((tip) => tip.id === parseInt(tipid));
+		thistip.dislike_count += 1;
+		TipAdapter.EditTip(thistip.id, thistip.like_count, thistip.dislike_count);
+		e.currentTarget.lastChild.innerText = thistip.dislike_count;
+	}
 }
