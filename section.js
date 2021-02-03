@@ -217,8 +217,6 @@ class Section {
 	};
 
 	newTipToRails = (e) => {
-		debugger;
-		console.log(this);
 		e.preventDefault();
 		let colors = e.currentTarget[1].value;
 		let sections = e.currentTarget[3].value;
