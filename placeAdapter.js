@@ -1,6 +1,6 @@
 class PlaceAdapter {
 	static fetchPlaces() {
-		return fetch("https://travel-tips-updated.herokuapp.com//places")
+		return fetch("https://travel-tips-updated.herokuapp.com/places")
 			.then((res) => res.json())
 			.then((placeInfo) => {
 				return placeInfo.forEach(function (place) {
