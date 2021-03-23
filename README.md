@@ -50,6 +50,7 @@ _Also need to install travel-tips for database_
 
 - SPA created with Vanilla JS.
 - Created functional pop-up cards with prioritized tip information based on user feedback.
+- Color coding for tips to notate "To do" suggestions from "Stay away from" warnings.
 - Ability to search destinations and create new destinations and tips.
 
 To-do list:
