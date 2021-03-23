@@ -125,6 +125,8 @@ class Section {
 					(child) => (child.style.display = "none")
 				);
 			});
+			let body = document.getElementById("bigone");
+			body.style.overflow = "auto";
 		});
 		// expand the clone card
 		await this.toggleExpansion(
@@ -146,6 +148,8 @@ class Section {
 		// append the close button after the expansion is done
 
 		cardClone.appendChild(closeButton);
+		let body = document.getElementById("bigone");
+		body.style.overflow = "hidden";
 	};
 
 	fadeContent = (element, opacity, duration = 300) => {

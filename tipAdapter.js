@@ -1,5 +1,5 @@
 class TipAdapter {
-	static baseURL = "https://obscure-depths-42428.herokuapp.com/tips";
+	static baseURL = "http://localhost:3000/tips";
 
 	static getTips() {
 		return fetch(TipAdapter.baseURL)
@@ -20,7 +20,7 @@ class TipAdapter {
 	}
 
 	static makeNewTip(section_id, place_id, info, color) {
-		return fetch("https://obscure-depths-42428.herokuapp.com/tips", {
+		return fetch("http://localhost:3000/tips", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -49,7 +49,7 @@ class TipAdapter {
 	}
 
 	static EditTip(tip_id, like_count, dislike_count) {
-		return fetch(`https://obscure-depths-42428.herokuapp.com/tips/${tip_id}`, {
+		return fetch(`http://localhost:3000/tips/${tip_id}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",

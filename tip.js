@@ -36,7 +36,8 @@ class Tip {
 		this.fuckyou.append(this.colorDiv, this.infoDiv, this.likeArea);
 		this.main.appendChild(this.fuckyou);
 
-		this.likeButton.addEventListener("click", this.addLike);
+		// this.likeButton.addEventListener("click", this.addLike);
+		// this.dislikeButton.addEventListener("click", this.addDislike);
 		Tip.all.push(this);
 	}
 	renderTip = () => {
@@ -104,7 +105,8 @@ class Tip {
 		TipAdapter.EditTip(thistip.id, thistip.like_count, thistip.dislike_count);
 		e.currentTarget.lastChild.innerText = thistip.like_count;
 	}
-	addDisike(e) {
+	addDislike(e) {
+		debugger;
 		let tipid = e.currentTarget.lastChild.id;
 		let thistip = Tip.all.find((tip) => tip.id === parseInt(tipid));
 		thistip.dislike_count += 1;

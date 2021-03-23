@@ -29,11 +29,14 @@ class Place {
 	};
 
 	renderAllSections = () => {
-		this.allSections().forEach((section) => {
-			section.renderSection();
-			section.jfk();
-			return this.sectionDiv.appendChild(section.main);
-		});
+		this.allSections()
+			.sort((a, b) => a.name.localeCompare(b.name))
+			.reverse()
+			.forEach((section) => {
+				section.renderSection();
+				section.jfk();
+				return this.sectionDiv.appendChild(section.main);
+			});
 	};
 
 	allSections = () => {

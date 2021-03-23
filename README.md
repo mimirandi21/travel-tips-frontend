@@ -1,32 +1,70 @@
 # Travel Tips
 
-Getting ready for your next vacation?  Or just dreaming of a break from the monotony of day to day life?  Either way, come take a look at the Travel Tips site!  You can find tips from other users when planning your next vacation on what to pack, where to eat or a variety of different subjects.  Or you can leave your own tips to help out others in their future travels!  You can also agree or disagree with tips that have already been left to help others in their planning.
+An app created to bring travellers together to help each other in their exploration of the world around us!
+
+<!-- ![screenshot](./public/login.png) -->
+
+[Project Walkthrough Video](https://youtu.be/7XZx9x8PlTM)
+
+## Table of contents
+
+- [General info](#general-info)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Features](#features)
+- [Status](#status)
+- [Inspiration](#inspiration)
+- [Contact](#contact)
+
+## General info
+
+Getting ready for your next vacation? Or just dreaming of a break from the monotony of day to day life? Either way, come take a look at the Travel Tips site! You can find tips from other users when planning your next vacation on what to pack, where to eat or a variety of different subjects. Or you can leave your own tips to help out others in their future travels! You can also agree or disagree with tips that have already been left to help others in their planning.
 Come along today and let's get travelling!
 
+## Screenshots
 
-###Follow along below to clone and run this repo.
+![screenshot](./public/LOTRMovie.png)
 
-To see more about this process:
+## Technologies
 
-Youtube Project Post: https://drive.google.com/file/d/1vGKhw3DrIHELAK--vmn0KaGcca7nfcxH/view?usp=sharing
+- JavaScript
+- CSS
 
-Project Blog Post: https://dev.to/meemeek/the-beginning-of-a-beautiful-friendship-with-javascript-hopefully-3fkj
+\***\*To see more about this process:\*\***
+
+[Project Blog Post](https://dev.to/meemeek/the-beginning-of-a-beautiful-friendship-with-javascript-hopefully-3fkj)
 
 THANKS FOR CHECKING OUT MY PROJECT!
 
-##Installation Fork and clone repo and run.
-Using travel-tips-backend: 
+## Setup
 
-$ bundle install
+- Clone this repo to your local machine `git clone <this-repo-url>`
+- run `cd travel-tips-project-frontend` to access
+- run `npm install` to install required dependencies
+- run `npm start` to start application on your local machine
 
-$ rails db:migrate
+_Also need to install travel-tips for database_
 
-$ rails db:seed
+## Features
 
-##Usage Please run rails s in your terminal from travel-tips-backend, and open the travel-tips-frontend html in your preferred browser.
+- SPA created with Vanilla JS.
+- Created functional pop-up cards with prioritized tip information based on user feedback.
+- Ability to search destinations and create new destinations and tips.
 
-##Contributing Bug reports and pull requests are welcome on GitHub at https://github.com/mimirandi21/travel-tips-backend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
+To-do list:
 
-##License This is available as open source under the terms of the MIT License.
+- Clean up new tip functionality (stay in card)
+- Clickable features change on mouse over.
 
-##Code of Conduct Everyone interacting in the Travel Tips project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+## Status
+
+Project is in progress.
+
+## Inspiration
+
+Project inspired by my love for traveling and the hours spent researching each destination before my trips.
+
+## Contact
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/mimirandi21/travel-tips-project-frontend.

@@ -1,6 +1,6 @@
 class PlaceAdapter {
 	static fetchPlaces() {
-		return fetch("https://obscure-depths-42428.herokuapp.com/places")
+		return fetch("http://localhost:3000/places")
 			.then((res) => res.json())
 			.then((placeInfo) => {
 				return placeInfo.forEach(function (place) {

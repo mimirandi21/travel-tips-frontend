@@ -11,7 +11,7 @@ newDestSubmit.addEventListener("submit", (e) => {
 	data = {
 		place: { name: dest },
 	};
-	fetch("https://obscure-depths-42428.herokuapp.com/places", {
+	fetch("http://localhost:3000/places", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
