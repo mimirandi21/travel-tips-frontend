@@ -2,7 +2,7 @@
 
 An app created to bring travellers together to help each other in their exploration of the world around us!
 
-<!-- ![screenshot](./public/login.png) -->
+![screenshot](./images/Travel Tips Main.png)
 
 [Project Walkthrough Video](https://youtu.be/7XZx9x8PlTM)
 
@@ -24,7 +24,7 @@ Come along today and let's get travelling!
 
 ## Screenshots
 
-![screenshot](./public/LOTRMovie.png)
+![screenshot](./images/Travel Tips Tip.png)
 
 ## Technologies
 
