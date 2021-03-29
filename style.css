@@ -1,3 +1,7 @@
+li {
+	cursor: pointer;
+}
+
 ul {
 	list-style: square;
 	text-align: left;
@@ -273,7 +277,6 @@ body {
 }
 #placeName h1 {
 	margin: 0;
-	cursor: pointer;
 }
 
 form,
