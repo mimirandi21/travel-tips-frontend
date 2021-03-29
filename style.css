@@ -273,6 +273,7 @@ body {
 }
 #placeName h1 {
 	margin: 0;
+	cursor: pointer;
 }
 
 form,
@@ -328,6 +329,7 @@ form,
 #newdie:hover {
 	background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 	background-color: #408c99;
+	cursor: pointer;
 }
 #like-button:active,
 #dislike-button:active,
@@ -526,4 +528,12 @@ form {
 }
 #new-place-form {
 	padding-bottom: 50px;
+}
+
+.boxylady {
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
 }
