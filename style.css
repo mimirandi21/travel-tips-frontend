@@ -1,3 +1,11 @@
+button {
+	cursor: pointer;
+}
+
+li {
+	cursor: pointer;
+}
+
 ul {
 	list-style: square;
 	text-align: left;
