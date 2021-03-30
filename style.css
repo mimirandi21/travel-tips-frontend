@@ -1,213 +1,24 @@
-li {
+button {
 	cursor: pointer;
 }
 
-ul {
-	list-style: square;
-	text-align: left;
-	padding-inline-start: 15px;
-}
-#tip-list span {
-	background-color: #ffffff;
-	opacity: 0.8;
-	margin: 15px;
-	color: black;
-}
-
-#main-Attractions:hover #tip-section {
-	display: block;
-	background-color: #ffffff;
-	margin: 15px;
-	opacity: 0.8;
-	color: black;
-}
-
-#main-Attractions:hover #section {
-	padding-top: 1%;
-}
-
-#main-Weather:hover #tip-section {
-	display: block;
-	background-color: #ffffff;
-	margin: 15px;
-	opacity: 0.8;
-	color: black;
-}
-
-#main-Weather:hover #section {
-	padding-top: 2px;
-}
-
-#main-Hotels:hover #tip-section {
-	display: block;
-	background-color: #ffffff;
-	margin: 15px;
-	opacity: 0.8;
-	color: black;
-}
-
-#main-Hotels:hover #section {
-	padding-top: 1%;
-}
-
-#main-General:hover #tip-section {
-	display: block;
-	background-color: #ffffff;
-	margin: 15px;
-	opacity: 0.8;
-	color: black;
-}
-
-#main-General:hover #section {
-	padding-top: 2%;
-}
-
-#main-Packing:hover #tip-section {
-	display: block;
-	background-color: #ffffff;
-	margin: 10px;
-	opacity: 0.8;
-	color: black;
-}
-
-#main-Packing:hover #section {
-	padding-top: 1%;
-}
-
-#main-Food:hover #tip-section {
-	display: block;
-	background-color: #ffffff;
-	margin: 10px;
-	opacity: 0.8;
-	color: black;
-}
-
-#main-Food:hover #section {
-	padding-top: 1%;
-}
-#placeSections {
-	display: none;
-	/* justify-content: space-around;
-	align-items: flex-start;
-	flex-direction: row;
-	flex-wrap: wrap;
-	height: 600px; */
-}
-
-#places {
+form {
 	position: relative;
+	z-index: 3;
+	font-family: "Kalam", cursive;
 }
 
-#main-Attractions {
-	display: block;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
-	width: 30%;
-	height: 45%;
-	margin: 3px;
+form,
+#formLabel {
 	text-align: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-		url("images/view.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	backdrop-filter: blur(8px);
-	color: black;
-	list-style-position: inside;
 }
 
-#main-Weather {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
-	width: 30%;
-	height: 45%;
-	margin: 3px;
-	text-align: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-		url("images/rainy-day.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	color: black;
-	list-style-position: inside;
-}
-
-#main-Hotels {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
-	width: 30%;
-	height: 45%;
-	margin: 3px;
-	text-align: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-		url("images/hotel.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	backdrop-filter: blur(8px);
-	color: black;
-	list-style-position: inside;
-}
-
-#main-General {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
-	width: 30%;
-	height: 45%;
-	margin: 3px;
-	text-align: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-		url("images/notes.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	color: black;
-	list-style-position: inside;
-}
-
-#main-Packing {
-	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
-	transition: 0.3s;
-	width: 30%;
-	height: 45%;
-	margin: 3px;
-	text-align: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-		url("images/suitcase.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: left;
-	backdrop-filter: blur(8px);
-	color: black;
-	list-style-position: inside;
-}
-
-#main-Food {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
-	width: 30%;
-	height: 45%;
-
-	margin: 3px;
-	text-align: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-		url("images/new-fork.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	color: black;
-	list-style-position: inside;
-}
-
-li#main {
-	list-style-type: none;
-}
-
-#searchbar {
-	margin-left: 70%;
-	padding: 15px;
-	border-radius: 10px;
-	margin-top: 150px;
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+	min-width: 100%;
+	position: relative;
 }
 
 input[type="text"] {
@@ -222,6 +33,14 @@ input[type="text"]:focus {
 	width: 25%;
 }
 
+li {
+	cursor: pointer;
+}
+
+li#main {
+	list-style-type: none;
+}
+
 li#tip-list {
 	display: list-item;
 	list-style: square;
@@ -230,120 +49,19 @@ li#tip-list {
 	font-size: 15px;
 }
 
-html,
-body {
-	margin: 0;
-	min-height: 100%;
-	min-width: 100%;
-	position: relative;
+ul {
+	list-style: square;
+	text-align: left;
+	padding-inline-start: 15px;
 }
 
-#header {
-	flex-direction: column;
-	margin: 0;
+#change {
+	height: 4px;
+}
+
+#clone #main {
 	display: flex;
-	width: 100%;
-	/* align-items: stretch; */
-	/* The image used */
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-		url("images/lovepalms.jpg");
-	/* Full height */
-
-	/* min-width: 100%; */
-	filter: brightness(100%);
-	/* Center and scale the image nicely */
-	background-size: cover;
-	background-position: bottom;
-	background-repeat: no-repeat;
-	color: white;
-	height: 400px;
-}
-
-#main-title {
-	text-align: center;
-	font-family: "Gochi Hand", cursive;
-	font-size: 56px;
-}
-
-#placeSpace {
-	text-align: center;
-}
-
-#placeName {
-	text-align: center;
-	font-family: "Gochi Hand", cursive;
-	font-size: 20px;
-	height: fit-content;
-}
-#placeName h1 {
-	margin: 0;
-}
-
-form,
-#formLabel {
-	text-align: center;
-}
-
-#wrapper {
-	background-color: rgb(253, 247, 242);
-}
-
-#section {
-	/* margin: 30px; */
-	/* display: absolute; */
-	padding-top: 100px;
-}
-
-#section h3 span {
-	font-size: 25px;
-	font-family: "Kalam", cursive;
-	text-shadow: 3px 3px 8px black;
-	color: white;
-}
-
-#tip-section {
-	display: none;
-}
-
-#like-button,
-#dislike-button,
-#newdie {
-	box-shadow: 0px 10px 14px -7px #276873;
-	background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color: #599bb3;
-	border-radius: 8px;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-family: "Kalam", cursive;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 5px 10px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #3d768a;
-	margin: 20px;
-}
-
-#dislike-button {
-	margin-left: 50px;
-}
-#like-button:hover,
-#dislike-button:hover,
-#newdie:hover {
-	background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color: #408c99;
-	cursor: pointer;
-}
-#like-button:active,
-#dislike-button:active,
-#newdie:active {
-	position: relative;
-	top: 1px;
-}
-
-#likeme,
-#dislikeme {
-	align-self: flex-end;
+	flex-direction: column;
 }
 
 #clone-Attractions {
@@ -370,102 +88,7 @@ form,
 	overflow-y: auto;
 	text-align: justify;
 }
-#clone-Weather {
-	padding-top: 70px;
-	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
-	transition: 0.3s;
-	min-width: 30%;
-	min-height: 45%;
-	text-align: center;
-	background-image: linear-gradient(
-			rgba(255, 255, 255, 0.8),
-			rgba(255, 255, 255, 0.8)
-		),
-		url("images/rainy-day.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	backdrop-filter: blur(8px);
-	color: black;
-	list-style-position: inside;
-	z-index: 1;
-	position: absolute;
-	overflow-x: hidden;
-	overflow-y: auto;
-	text-align: justify;
-}
-#clone-Hotels {
-	padding-top: 70px;
-	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
-	transition: 0.3s;
-	min-width: 30%;
-	min-height: 45%;
-	text-align: center;
-	background-image: linear-gradient(
-			rgba(255, 255, 255, 0.8),
-			rgba(255, 255, 255, 0.8)
-		),
-		url("images/hotel.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	backdrop-filter: blur(8px);
-	color: black;
-	list-style-position: inside;
-	z-index: 1;
-	position: absolute;
-	overflow-x: hidden;
-	overflow-y: auto;
-	text-align: justify;
-}
-#clone-General {
-	padding-top: 70px;
-	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
-	transition: 0.3s;
-	min-width: 30%;
-	min-height: 45%;
-	text-align: center;
-	background-image: linear-gradient(
-			rgba(255, 255, 255, 0.8),
-			rgba(255, 255, 255, 0.8)
-		),
-		url("images/notes.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	backdrop-filter: blur(8px);
-	color: black;
-	list-style-position: inside;
-	z-index: 1;
-	position: absolute;
-	overflow-x: hidden;
-	overflow-y: auto;
-	text-align: justify;
-}
-#clone-Packing {
-	padding-top: 70px;
-	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
-	transition: 0.3s;
-	min-width: 30%;
-	min-height: 45%;
-	text-align: center;
-	background-image: linear-gradient(
-			rgba(255, 255, 255, 0.8),
-			rgba(255, 255, 255, 0.8)
-		),
-		url("images/suitcase.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: left;
-	backdrop-filter: blur(8px);
-	color: black;
-	list-style-position: inside;
-	z-index: 1;
-	position: absolute;
-	overflow-x: hidden;
-	overflow-y: auto;
-	text-align: justify;
-}
+
 #clone-Food {
 	padding-top: 70px;
 	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
@@ -491,8 +114,112 @@ form,
 	text-align: justify;
 }
 
-#change {
-	height: 4px;
+#clone-General {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/notes.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+
+#clone-Hotels {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/hotel.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+
+#clone-Packing {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/suitcase.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+
+#clone-Weather {
+	padding-top: 70px;
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	min-width: 30%;
+	min-height: 45%;
+	text-align: center;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("images/rainy-day.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+	z-index: 1;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: justify;
+}
+
+#dislike-button {
+	margin-left: 50px;
+}
+
+#formLabel {
+	font-family: "Kalam", cursive;
 }
 
 #fuckyou {
@@ -501,6 +228,318 @@ form,
 	position: relative;
 	display: block;
 }
+
+#header {
+	flex-direction: column;
+	margin: 0;
+	display: flex;
+	width: 100%;
+	/* align-items: stretch; */
+	/* The image used */
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+		url("images/lovepalms.jpg");
+	/* Full height */
+
+	/* min-width: 100%; */
+	filter: brightness(100%);
+	/* Center and scale the image nicely */
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	color: white;
+	height: 400px;
+}
+
+#like-button,
+#dislike-button,
+#newdie {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color: #599bb3;
+	border-radius: 8px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: "Kalam", cursive;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #3d768a;
+	margin: 20px;
+}
+
+#like-button:active,
+#dislike-button:active,
+#newdie:active {
+	position: relative;
+	top: 1px;
+}
+
+#like-button:hover,
+#dislike-button:hover,
+#newdie:hover {
+	background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color: #408c99;
+	cursor: pointer;
+}
+
+#likeme,
+#dislikeme {
+	align-self: flex-end;
+}
+
+#likes,
+#dislikes {
+	display: flex;
+	flex-direction: row;
+}
+
+#likeSection {
+	display: inline-flex;
+}
+
+#main-Attractions {
+	display: block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 30%;
+	height: 45%;
+	margin: 3px;
+	text-align: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/view.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+}
+
+#main-Attractions:hover #section {
+	padding-top: 1%;
+}
+
+#main-Attractions:hover #tip-section {
+	display: block;
+	background-color: #ffffff;
+	margin: 15px;
+	opacity: 0.8;
+	color: black;
+}
+
+#main-Food {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 30%;
+	height: 45%;
+
+	margin: 3px;
+	text-align: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+		url("images/new-fork.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	color: black;
+	list-style-position: inside;
+}
+
+#main-Food:hover #section {
+	padding-top: 1%;
+}
+
+#main-Food:hover #tip-section {
+	display: block;
+	background-color: #ffffff;
+	margin: 10px;
+	opacity: 0.8;
+	color: black;
+}
+
+#main-General {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 30%;
+	height: 45%;
+	margin: 3px;
+	text-align: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/notes.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: black;
+	list-style-position: inside;
+}
+
+#main-General:hover #section {
+	padding-top: 2%;
+}
+
+#main-General:hover #tip-section {
+	display: block;
+	background-color: #ffffff;
+	margin: 15px;
+	opacity: 0.8;
+	color: black;
+}
+
+#main-Hotels {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 30%;
+	height: 45%;
+	margin: 3px;
+	text-align: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/hotel.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+}
+
+#main-Hotels:hover #section {
+	padding-top: 1%;
+}
+
+#main-Hotels:hover #tip-section {
+	display: block;
+	background-color: #ffffff;
+	margin: 15px;
+	opacity: 0.8;
+	color: black;
+}
+
+#main-Packing {
+	box-shadow: 0 4px 8px 0 rgba(211, 198, 198, 0.2);
+	transition: 0.3s;
+	width: 30%;
+	height: 45%;
+	margin: 3px;
+	text-align: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/suitcase.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left;
+	backdrop-filter: blur(8px);
+	color: black;
+	list-style-position: inside;
+}
+
+#main-Packing:hover #section {
+	padding-top: 1%;
+}
+
+#main-Packing:hover #tip-section {
+	display: block;
+	background-color: #ffffff;
+	margin: 10px;
+	opacity: 0.8;
+	color: black;
+}
+
+#main-title {
+	text-align: center;
+	font-family: "Gochi Hand", cursive;
+	font-size: 56px;
+}
+
+#main-Weather {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 30%;
+	height: 45%;
+	margin: 3px;
+	text-align: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("images/rainy-day.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: black;
+	list-style-position: inside;
+}
+
+#main-Weather:hover #section {
+	padding-top: 2px;
+}
+
+#main-Weather:hover #tip-section {
+	display: block;
+	background-color: #ffffff;
+	margin: 15px;
+	opacity: 0.8;
+	color: black;
+}
+
+#new-place-form {
+	padding-bottom: 50px;
+}
+
+#placeName {
+	text-align: center;
+	font-family: "Gochi Hand", cursive;
+	font-size: 20px;
+	height: fit-content;
+}
+#placeName h1 {
+	margin: 0;
+}
+
+#places {
+	position: relative;
+}
+
+#placeSections {
+	display: none;
+	/* justify-content: space-around;
+	align-items: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 600px; */
+}
+
+#placeSpace {
+	text-align: center;
+}
+
+#searchbar {
+	margin-left: 70%;
+	padding: 15px;
+	border-radius: 10px;
+	margin-top: 150px;
+}
+
+#section {
+	/* margin: 30px; */
+	/* display: absolute; */
+	padding-top: 100px;
+}
+
+#section h3 span {
+	font-size: 25px;
+	font-family: "Kalam", cursive;
+	text-shadow: 3px 3px 8px black;
+	color: white;
+}
+
+#tip-list span {
+	background-color: #ffffff;
+	opacity: 0.8;
+	margin: 15px;
+	color: black;
+}
+
+#tip-section {
+	display: none;
+}
+
 #tipsahoy {
 	margin-top: 5px;
 	display: inline-flex;
@@ -509,34 +548,6 @@ form,
 	font-size: 25px;
 }
 
-#likeSection {
-	display: inline-flex;
-}
-#clone #main {
-	display: flex;
-	flex-direction: column;
-}
-form {
-	position: relative;
-	z-index: 3;
-	font-family: "Kalam", cursive;
-}
-#likes,
-#dislikes {
-	display: flex;
-	flex-direction: row;
-}
-#formLabel {
-	font-family: "Kalam", cursive;
-}
-#new-place-form {
-	padding-bottom: 50px;
-}
-
-.boxylady {
-	cursor: pointer;
-}
-
-button {
-	cursor: pointer;
+#wrapper {
+	background-color: rgb(253, 247, 242);
 }
