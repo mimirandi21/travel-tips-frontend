@@ -40,8 +40,6 @@ class Section {
 	};
 
 	onCardClick = async (e) => {
-		// const likeArea = document.querySelectorAll("#likeSection")
-
 		const places = document.querySelector("#places");
 		const card = this.main;
 		const likes = document.querySelectorAll("#likeSection");
@@ -49,8 +47,7 @@ class Section {
 		// clone the card
 		const cardClone = document.createElement("div");
 		cardClone.id = `clone-${this.name}`;
-		// let newarea = document.createElement("div");
-		// cardClone.appendChild(newarea);
+
 		cardCloneCreate(cardClone, this);
 		renderNewTipForm(cardClone, this);
 
@@ -172,62 +169,28 @@ class Section {
 				return y.like_count - x.like_count;
 			});
 	};
-	bigjfk = () => {
-		this.renderBigTip();
-		this.bigTips();
-	};
 
-	jfk = () => {
-		this.renderTips();
-		this.fuckingTips();
-	};
-	renderTips = () => {
-		if (this.allTips().length > 0) {
-			let tips = this.allTips().slice(0, 3);
-			tips.forEach((tip) => this.tipArea.append(tip.infoDiv));
-		}
-	};
-
-	renderBigTip = () => {
-		if (this.allTips().length > 0) {
-			this.allTips().forEach((tip) => newarea.append(tip.main));
-		}
-	};
-	fuckingTips = () => {
+	appendTips = () => {
 		if (this.allTips().length > 0) {
 			this.allTips()
 				.map((tip) => tip.renderTip())
 				.join(" ");
 		}
 	};
-	bigTips = () => {
-		this.allTips().map((tip) => tip.renderTip());
-	};
 
-	renderFirstThreeTips = () => {
-		let tips = this.allTips().slice(0, 3);
-		tips.forEach((tip) => this.tipArea.append(tip.main));
-
-		if (this.allTips().length > 3) {
-			let tips = this.allTips().slice(0, 3);
-			return tips.map((tip) => tip.renderTip()).join(" ");
-		} else {
-			return this.renderTips();
-		}
+	tipsToPlace = () => {
+		this.renderTips();
+		this.appendTips();
 	};
 
 	renderSection = () => {
 		return (this.nameDiv.innerHTML = `<h3 id="${this.name}"><span>${this.name}</span></h3>`);
 	};
 
-	newTipToRails = (e) => {
-		e.preventDefault();
-		let colors = e.currentTarget[1].value;
-		let sections = e.currentTarget[3].value;
-		let places = e.currentTarget[2].value;
-		let newinfo = e.currentTarget[0].value;
-		TipAdapter.makeNewTip(sections, places, newinfo, colors);
-		e.currentTarget.reset();
-		return false;
+	renderTips = () => {
+		if (this.allTips().length > 0) {
+			let tips = this.allTips().slice(0, 3);
+			tips.forEach((tip) => this.tipArea.append(tip.infoDiv));
+		}
 	};
 }

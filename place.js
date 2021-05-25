@@ -34,7 +34,7 @@ class Place {
 			.reverse()
 			.forEach((section) => {
 				section.renderSection();
-				section.jfk();
+				section.tipsToSection();
 				return this.sectionDiv.appendChild(section.main);
 			});
 	};
