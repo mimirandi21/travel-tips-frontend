@@ -498,11 +498,6 @@ ul {
 
 #placeSections {
 	display: none;
-	/* justify-content: space-around;
-	align-items: flex-start;
-	flex-direction: row;
-	flex-wrap: wrap;
-	height: 600px; */
 }
 
 #placeSpace {
@@ -517,8 +512,6 @@ ul {
 }
 
 #section {
-	/* margin: 30px; */
-	/* display: absolute; */
 	padding-top: 100px;
 }
 
